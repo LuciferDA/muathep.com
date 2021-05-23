@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]>
+<html dir="{{ direction }}" lang="{{ lang }}" class="ie8"><![endif]-->
+<!--[if IE 9 ]>
+<html dir="{{ direction }}" lang="{{ lang }}" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="{{ direction }}" lang="{{ lang }}">
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ title }}</title>
+    <base href="{{ base }}"/>
+    {% if description %}
+        <meta name="description" content="{{ description }}"/>
+    {% endif %}
+    {% if keywords %}
+        <meta name="keywords" content="{{ keywords }}"/>
+    {% endif %}
+       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" />
+    <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="catalog/view/theme/default/assets/css/bootstrap.min.css">
+    <!-- Customizable CSS -->
+    <link rel="stylesheet" href="catalog/view/theme/default/assets/css/main.css">
+    <link rel="stylesheet" href="catalog/view/theme/default/assets/css/blue.css">
+    <link rel="stylesheet" href="catalog/view/theme/default/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="catalog/view/theme/default/assets/css/owl.transitions.css">
+    <link rel="stylesheet" href="catalog/view/theme/default/assets/css/animate.min.css">
+    <link rel="stylesheet" href="catalog/view/theme/default/assets/css/rateit.css">
+    <link rel="stylesheet" href="catalog/view/theme/default/assets/css/bootstrap-select.min.css">
+    <!-- Icons/Glyphs -->
+    <link rel="stylesheet" href="catalog/view/theme/default/assets/css/font-awesome.css">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="catalog/view/theme/default/stylesheet/messenger.css" type="text/css" rel="stylesheet" media="screen" />
+    <script src="catalog/view/javascript/popup.js" type="text/javascript"></script>
+    <script src="catalog/view/javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="catalog/view/javascript/fbchat.js" type="text/javascript"></script>
+    <script src="catalog/view/javascript/rebound.min.js" type="text/javascript"></script>
+    <script src="catalog/view/javascript/jquery/swiper/js/swiper.jquery.js" type="text/javascript"></script>
+    <link href="catalog/view/javascript/jquery/swiper/css/swiper.min.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="catalog/view/javascript/jquery/swiper/css/opencart.css" type="text/css" rel="stylesheet" media="screen" />
+    
+            <link href="catalog/view/javascript/jquery/magnific/magnific-popup.css" type="text/css" rel="stylesheet" media="screen"/>
+            <link href="catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen"/>
+            <link href="catalog/view/theme/default/assets/css/lightbox.css" type="text/css" rel="stylesheet" media="screen"/>
+            <script src="catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
+
+            
+        <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+    {% for link in links %}
+        <link href="{{ link.href }}" rel="{{ link.rel }}"/>
+    {% endfor %}
+    {% for analytic in analytics %}
+        {{ analytic }}
+    {% endfor %}
+</head>
+<body class="cnt-home">
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0&appId=1073484599365702&autoLogAppEvents=1" nonce="hp1rEgLQ"></script>
+<!-- ============================================== HEADER ============================================== -->
+<header class="header-style-1">
+    <!-- ============================================== TOP MENU ============================================== -->
+    <div class="top-bar animate-dropdown">
+        <div class="container">
+            <div class="header-top-inner">
+                <div class="cnt-account">
+                    <ul class="list-unstyled">
+                        {% if logged %}
+                            <li><a href="{{ account }}"><i class="icon fa fa-user"></i> {{ text_account }}</a></li>
+                            <li><a href="{{ order }}"><i class="icon fa fa-check"></i> {{ text_order }}</a></li>
+                            <li><a href="{{ transaction }}"><i class="icon fa fa-check"></i> {{ text_transaction }}</a></li>
+                            <li><a href="{{ download }}"><i class="icon fa fa-check"></i> {{ text_download }}</a></li>
+                            <li><a href="{{ logout }}"><i class="icon fa fa-lock"></i> {{ text_logout }}</a></li>
+                        {% else %}
+                            <li><a href="{{ register }}">{{ text_register }}</a></li>
+                            <li><a href="{{ login }}">{{ text_login }}</a></li>
+                        {% endif %}
+                        <li><a href="{{ wishlist }}" title="{{ text_wishlist }}"><i class="fa fa-heart"></i> {{ text_wishlist }}</a></li>
+                        <li><a href="{{ shopping_cart }}" title="{{ text_shopping_cart }}"><i class="fa fa-shopping-cart"></i> {{ text_shopping_cart }}</a></li>
+                        <li><a href="{{ checkout }}" title="{{ text_checkout }}"><i class="fa fa-share"></i> {{ text_checkout }}</a></li>
+                    </ul>
+                </div>
+                <!-- /.cnt-account -->
+                <div class="cnt-block">
+                    <ul class="list-unstyled list-inline">
+                        {{ currency }}
+                        {{ language }}
+                    </ul>
+                    <!-- /.list-unstyled -->
+                </div>
+                <!-- /.cnt-cart -->
+                <div class="clearfix"></div>
+            </div>
+            <!-- /.header-top-inner -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.header-top -->
+    <!-- ============================================== TOP MENU : END ============================================== -->
+    <div class="main-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
+                    <div class="logo">
+                    {% if logo %}
+                    <a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}"
+                                                           alt="{{ name }}" class="img-responsive"/>
+                        </a>
+                    {% else %}
+                        <h1><a href="{{ home }}">{{ name }}</a></h1>
+                    {% endif %}
+                    </div>
+                </div>
+                <!-- /.logo-holder -->
+                <div class="col-xs-12 col-sm-12 col-md-7 top-search-holder">
+                    {{ search }}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-2 animate-dropdown top-cart-row">
+                    {{ cart }}
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.main-header -->
+    <!-- ============================================== NAVBAR ============================================== -->
+    <div class="header-nav animate-dropdown">
+        <div class="container">
+            {{ menu }}
+            <!-- /.navbar-default -->
+        </div>
+        <!-- /.container-class -->
+    </div>
+    <!-- /.header-nav -->
+</header>

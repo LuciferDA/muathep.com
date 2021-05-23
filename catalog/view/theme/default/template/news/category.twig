@@ -1,0 +1,78 @@
+{{ header }}
+<div class="breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-inner">
+            <ul class="list-inline list-unstyled">
+                {% for breadcrumb in breadcrumbs %}
+                    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- /.breadcrumb-inner -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.breadcrumb -->
+<div class="body-content outer-top-xs" id="top-banner-and-menu">
+    <div class="container">
+        <div class="row">
+            <!--  SIDEBAR  -->
+            <div class="col-xs-12 col-sm-12 col-md-3 sidebar">
+                {{ column_left }}
+            </div>
+            <!--  SIDEBAR : END  -->
+            <!--  CONTENT  -->
+            <div class="col-xs-12 col-sm-12 col-md-9">
+                <div id="content">
+                    <h1>{{ heading_title }}</h1>
+                    {{ content_top }}
+                    {% if description %}
+                        <div class="category-description">
+                            {{ description }}
+                        </div>
+                    {% endif %}
+                    {% if newss %}
+                        {% for news in newss %}
+                            <div class="blog-post  wow fadeInUp">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                        <a href="{{ news.href }}"><img src="{{ news.thumb }}"
+                                                                       alt="{{ news.name }}"
+                                                                       title="{{ news.name }}"
+                                                                       class="img-responsive"/></a>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                                        <h4><a href="{{ news.href }}">{{ news.name }}</a></h4>
+                                        <span class="date-time">{{ news.date_added }}</span>
+                                        <p>{{ news.description }}</p>
+                                        <a href="{{ news.href }}" class="btn btn-upper btn-primary read-more">{{ text_read_more }}</a>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                        {% endfor %}
+
+                        <div class="row">
+                            <div class="col-sm-6 text-left">{{ pagination }}</div>
+                            <div class="col-sm-6 text-right">{{ results }}</div>
+                        </div>
+                    {% endif %}
+                    {% if not newss %}
+                        <p>{{ text_empty }}</p>
+                        <div class="buttons">
+                            <div class="pull-right"><a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <!--  CONTENT : END  -->
+        </div>
+        <!-- /.row -->
+        {{ content_bottom }}
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /#top-banner-and-menu -->
+{{ column_right }}
+{{ footer }}

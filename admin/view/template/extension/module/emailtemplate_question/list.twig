@@ -1,0 +1,158 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <a href="{{ add_action }}" data-toggle="tooltip" title="{{ button_add }}" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+        <button type="button" data-toggle="tooltip" title="{{ button_delete }}" class="btn btn-danger" onclick="confirm('{{ text_confirm }}') ? $('#form-questions').submit() : false;"><i class="fa fa-trash"></i></button>
+        <div class="btn-group dropdown">
+          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i> <i class="fa fa-caret-down"></i></button>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            {% if emailtemplate_question_url %}<li><a href="{{ emailtemplate_question_url }}" class="dropdown-item" data-toggle="tooltip" title="{{ button_emailtemplate }}">{{ button_emailtemplate_question }}</a><li>{% endif %}
+            {% if emailtemplate_question_answer_url %}<li><a href="{{ emailtemplate_question_answer_url }}" class="dropdown-item" data-toggle="tooltip" title="{{ button_emailtemplate }}">{{ button_emailtemplate_answer }}</a><li>{% endif %}
+          </ul>
+        </div>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+      <h1>{{ heading_name }}</h1>
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+          <li class="breadcrumb-item"><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+      <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      </div>
+    {% endif %}
+    {% if success %}
+      <div class="alert alert-success"><i class="fa fa-exclamation-circle"></i> {{ success }}
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      </div>
+    {% endif %}
+    <div class="row">
+      <div class="col-md-3 col-md-push-9 col-sm-12">
+        <form action="{{ filter_action }}" method="post" id="filter-marketing">
+          <div class="panel panel-default">
+            <div class="panel-heading"><i class="fa fa-filter"></i> {{ text_filter }}</div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label class="col-form-label" for="input-name">{{ entry_name }}</label> <input type="text" name="filter_name" value="{{ filter_name }}" placeholder="{{ entry_name }}" id="input-name" class="form-control"/>
+              </div>
+              <div class="form-group">
+                <label class="col-form-label" for="input-question">{{ entry_question }}</label> <input type="text" name="filter_question" value="{{ filter_question }}" placeholder="{{ entry_question }}" id="input-question" class="form-control"/>
+              </div>
+              <div class="form-group">
+                <label class="col-form-label" for="input-answer">{{ entry_answer }}</label> <input type="text" name="filter_answer" value="{{ filter_answer }}" placeholder="{{ entry_answer }}" id="input-answer" class="form-control"/>
+              </div>
+              <div class="form-group">
+                <label class="col-form-label" for="input-product">{{ entry_product }}</label> <input type="hidden" name="product_id" value="{{ filter_product }}" /><input type="text" name="filter_product" value="{{ filter_product_name }}" placeholder="{{ entry_product }}" id="input-product" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label class="col-form-label" for="input-status">{{ entry_status }}</label>
+                <div>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-default danger {{ (filter_status == 0 and filter_status != '') ? ' active' }}" data-toggle="tooltip" title="{{ text_disabled }}">
+                      <input type="radio" name="filter_status" value="0"{{ filter_status == 0 and filter_status != '' ? ' checked="checked"' }} /><i class="fa fa-fw fa-times"></i>
+                    </label>
+                    <label class="btn btn-default success {{ filter_status == 1 ? ' active' }}" data-toggle="tooltip" title="{{ text_enabled }}">
+                      <input type="radio" name="filter_status" value="1"{{ filter_status == 1 ? ' checked="checked"' }} /><i class="fa fa-fw fa-check"></i>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group text-right">
+                <button type="button" id="button-filter" class="btn btn-primary"><i class="fa fa-filter"></i> {{ button_filter }}</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-9 col-md-pull-3 col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form action="{{ delete_action }}" method="post" enctype="multipart/form-data" id="form-questions">
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                  <thead class="thead-light">
+                  <tr>
+                    <th style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);"/></th>
+                    <th class="text-left"><a href="{{ sort_name }}"{{ sort == 'name' ? ' class="' ~ order|lower ~ '"'  }}>{{ column_name }}</a></th>
+                    <th class="text-left"><a href="{{ sort_question }}"{{ sort == 'question' ? ' class="' ~ order|lower ~ '"'  }}>{{ column_question }}</a> / <a href="{{ sort_answer }}"{{ sort == 'answer' ? ' class="' ~ order|lower ~ '"'  }}>{{ column_answer }}</a></th>
+                    <th class="text-left"><a href="{{ sort_product }}"{{ sort == 'product' ? ' class="' ~ order|lower ~ '"'  }}>{{ column_product }}</a></th>
+                    <th class="text-center"><a href="{{ sort_status }}"{{ sort == 'status' ? ' class="' ~ order|lower ~ '"'  }}>{{ column_status }}</a></th>
+                    <th class="text-center"><a href="{{ sort_date_added }}"{{ sort == 'date_added' ? ' class="' ~ order|lower ~ '"'  }}>{{ column_date_added }}</a></th>
+                    <th class="text-right">&nbsp;</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {% if questions %}
+                    {% for question in questions %}
+                      <tr>
+                        <td class="text-center"><input type="checkbox" name="selected[]" value="{{ question.question_id }}"{% if question.question_id in selected %} checked="checked" {% endif %} /><textarea data-var="question" style="display:none;">{{ question.question_full }}</textarea><textarea data-var="answer" style="display:none;">{{ question.answer }}</textarea></td>
+                        <td class="text-left">{% if question.customer_id %}<a href="{{ question.customer_url }}">{{ question.name }}</a>{% else %}{{ question.name }}{% endif %}<br /><a href="mailto:{{ question.email }}">{{ question.email }}</a></td>
+                        <td class="text-left"><b>{{ question.question }}</b>{% if question.answer %}<br /><i class="fa fa-arrow-circle-right"></i> {{ question.answer }}{% endif %}</td>
+                        <td class="text-left"><a href="{{ question.product_url }}" data-var="product">{{ question.product_name }}</a> </td>
+                        <td class="text-center">
+                          {% if question.enabled %}
+                            <a href="{{ question.disable }}" data-toggle="tooltip" title="{{ button_disable }}"><i class="fa fa-check-circle text-success fa-2x"></i></a>
+                          {% else %}
+                            <a href="{{ question.enable }}" data-toggle="tooltip" title="{{ button_disable }}"><i class="fa fa-times-circle text-warning fa-2x"></i></a>
+                          {% endif %}
+                        </td>
+                        <td class="text-center">{{ question.date_added }}</td>
+                        <td class="text-right" style="white-space: nowrap;">
+                          {% if question.answer == '' %}<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-answer"><i class="fa fa-comment" data-toggle="tooltip" title="{{ button_answer }}"></i></button>{% endif %}
+                          <a href="{{ question.edit_url }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                        </td>
+                      </tr>
+                    {% endfor %}
+                  {% else %}
+                    <tr>
+                      <td class="text-center" colspan="7">{{ text_no_results }}</td>
+                    </tr>
+                  {% endif %}
+                  </tbody>
+                </table>
+              </div>
+              <div class="row">
+                <div class="col-sm-6 text-left">{{ pagination }}</div>
+                <div class="col-sm-6 text-right">{{ results }}</div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modal-answer" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="{{ answer_action }}" method="post" id="form-modal-answer">
+            <input type="hidden" name="question_id" value="" required />
+            <div class="form-group">
+              <label for="input-question">{{ entry_question }}</label>
+              <textarea id="input-question" class="form-control" disabled></textarea>
+            </div>
+            <div class="form-group">
+              <label for="input-answer">{{ entry_answer }}</label>
+              <textarea name="answer" id="input-answer" class="form-control" data-toggle="ckeditor" required></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" form="form-modal-answer" class="btn btn-success"><i class="fa fa-envelope"></i> {{ button_answer }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{{ footer }}

@@ -1,0 +1,99 @@
+@import https://fonts.googleapis.com/css?family=Poppins:100,200,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i;
+html,div,span,applet,object,iframe,h1,h2,h4,h3,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:top}
+body{line-height:normal;font-family:'Roboto',sans-serif;font-size:21px;color:#071553;margin:0;padding:0;-webkit-transition-property:font-size;-moz-transition-property:font-size;transition-property:font-size;-webkit-transition-duration:0.5s,.5s;-moz-transition-duration:0.5s,.5s;transition-duration:0.5s,.5s}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+:focus{outline:0}
+ins{text-decoration:none}
+del{text-decoration:line-through}
+input,select,textarea{font-family:'Roboto',sans-serif}
+img{border:0}
+.clear{clear:both;display:block;margin:0;padding:0}
+*{margin:0;padding:0}
+a{transition:opacity .3s ease-in,color .3s ease-in,background-color .3s ease-in;-moz-transition:opacity .3s ease-in,color .3s ease-in,background-color .3s ease-in;-webkit-transition:opacity .3s ease-in,color .3s ease-in,background-color .3s ease-in;-o-transition:opacity .3s ease-in,color .3s ease-in,background-color .3s ease-in;-ms-transition:opacity .3s ease-in,color .3s ease-in,background-color .3s ease-in;transition:color .3s linear 0}
+.clearfix:after,.ton-piece:after,.attr-filter:after,.clbox:after,.hcat-content:after,.gallery1:after,.container:after,.header:after,.gallery:after,.proceed:after,.contineShipping:after,.spOpBp:after,span.gal:after,.compareBox:after,.soldReviews:after,p:after,.addMoreProducts:after,.accordion:after,.contentBox:after,.directRegistration:after,.sendOrderInfo:after,.product-details:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.clearfix,.product-details:after{zoom:1}
+.contentBox .resp-vtabs .resp-tabs-list .loginRegister a{text-decoration:none;color:#fff}
+.left{float:left}
+.right{float:right}
+input,select{font-weight:500;font-family:'Roboto',sans-serif}
+.before-bannerload.hide{position:relative!important;height:auto;animation:fadebanner .3s .5s ease forwards;display:none}
+.before-bannerload img{max-height:inherit}
+#banner{position:relative}
+.banner-slider{position:relative;left:0;top:0}
+.flexslider .slides li:nth-child(1){display:block}
+.ban_text{position:absolute;left:8.1%;top:14.5%;z-index:1; max-width:90vw;}
+.ban_text h1{ text-transform: capitalize; font-weight: 600; font-size: 29px; line-height:clamp(36px,4.166vw,80px); letter-spacing: 0.09375vw; color: #fff; margin-bottom:1.4583vw;}
+.ban_text p{ font-weight: 500; font-size:clamp(14px,1.041vw,20px); line-height: clamp(22px,1.666vw,32px); color: #fff; margin-bottom:2.29vw;}
+.ban_text h6 a{background:#ff0202;border-radius:5px;padding:14px 49px 15px;font-weight:700;font-size:14px;text-transform:uppercase;color:#fff;font-family:'Poppins',sans-serif;letter-spacing:2px; display:inline-block;}
+@keyframes fadebanner {
+from{opacity:1}
+to{opacity:0}
+}
+.page-print	.my-account .box-content h3{display:block;padding-bottom:13px}
+.page-print .my-account .box-account.box-info{margin-top:0}
+.page-print .my-account .box-account.box-info .box-head{border-bottom:1px solid rgba(255,255,255,.5)}
+.sales-order-print .box-account .box-head{margin:0;padding:10px 12px 12px 30px;background:#31c0ec;color:#fff}
+.page-print{background:#FFF}
+.page-print .logo{position:relative;width:100%;width:200px;max-height:100px!important;display:inline-block;left:0}
+.page-print .print-head{padding:30px 0;background:#fff;text-align:left;border-top:15px solid #31c0ec;margin:0!important}
+.page-print .print-head .logo{float:none;max-height:50px;width:auto}
+.page-print .total-print-page{margin:0 auto;max-width:980px;width:98%}
+.sales-order-print .col2-set{border:1px solid #31c0ec;overflow:hidden}
+.sales-order-print .box-head > span{color:#be2429;float:right;font-size:16px;margin-right:13px;margin-top:5px}
+.sales-order-print .col-1{padding:6px 35px!important;float:left}
+.sales-order-print .col-1 .box-title{padding-bottom:0!important}
+.sales-order-print .col-2{padding:6px 35px!important;float:right;border-bottom:1px solid #e4e5eb}
+.sales-order-print .col-2 .box-title{padding-bottom:0!important}
+.sales-order-print .box-account .col-1 > address{font-size:13px}
+.sales-order-print .box-account .col-2 > address{font-size:13px}
+.sales-order-print .box-title h3{padding-bottom:0}
+.sales-order-print .recentOrderTable tr td{font-size:11px}
+.sales-order-print .recentOrderTable .product-name{font-size:10px!important}
+.sales-order-print .item-options{font-size:11px!important}
+.sales-order-print .payment_set{text-align:center;border:1px solid #e4e5eb;clear:both;display:inline-block;padding:15px 0;width:100%;margin:20px 0}
+.sales-order-print .subtitle > strong{font-size:14px}
+.sales-order-print .price-box .price,.sales-order-print .price{font-size:14px}
+.sales-order-print .nobr > strong{font-size:10px}
+.page-print .box-account .box-head h2{color:#fff;font-size:17px;text-transform:capitalize;margin-bottom:0;display:inline-block;margin-top:3px}
+.page-print.sales-order-print .box-head > span{color:#fff}
+.page-print .customer-account .dashboard .box-account address,.page-print .my-account address{font-style:normal;font-size:14px;font-weight:500;line-height:22px}
+.page-print .col2-set{width:100%}
+.page-print.sales-order-print .col2-set .col-1{width:38%;background:#e9f3ff;padding:6px 35px!important}
+.page-print .recentOrderTable{border:solid 1px #e4e5eb;margin-bottom:0}
+.page-print .recentOrderTable tr td{border-top:solid 1px #e4e5eb;border-right:1px solid #e4e5eb;font-size:14px;color:#006dab;padding:12px 15px}
+.page-print .recentOrderTable tr th{font-size:14px;color:#006dab;padding:12px 15px}
+.page-print .recentOrderTable tbody tr:nth-child(odd){background:#f9f9fc}
+.page-print .recentOrderTable tr td a{font-size:14px;color:#006dab;position:relative;display:inline-block;float:left}
+.page-print .recentOrderTable tr td a:hover{color:#be2429}
+.page-print .recentOrderTable tr td a.viewOrder{margin-right:15px;padding-left:18px}
+.page-print .recentOrderTable tr td a.viewOrder:before{position:absolute;content:"";left:0;top:50%;margin-top:-6px;background:url(../images/icons.png) no-repeat -35px -126px;width:11px;height:12px}
+.page-print .recentOrderTable tr td a.orderCancel{padding-left:18px}
+.page-print .recentOrderTable tr td a.orderCancel:before{position:absolute;content:"";left:0;top:50%;margin-top:-6px;background:url(../images/icons.png) no-repeat -47px -126px;width:10px;height:10px}
+.page-print .recentOrderTable tr th.status{width:100px}
+.page-print .recentOrderTable tr th.voc{width:170px}
+.page-print #bodycon .contentBox.contentWithSidebar .my-account h3.table-caption{margin-left:0;color:#fff;background:#006dab;text-align:right;margin-bottom:0!important;padding-right:25px}
+.page-print .recentOrderTable .data-table{border:1px solid #e4e5eb;border-top:none}
+.page-print .recentOrderTable tr th.a-center{text-align:left}
+.page-print .recentOrderTable tr th.a-right span,.recentOrderTable tr th.a-center span{display:block;clear:both;overflow:hidden}
+.page-print .recentOrderTable tfoot tr td{text-align:right}
+.page-print .recentOrderTable#my-orders-table tr th{text-align:left}
+.sales-order-print .recentOrderTable#my-orders-table tr th{text-align:center}
+.sales-order-print .recentOrderTable#my-orders-table tr td{border:1px solid #ccc!important}
+.sales-order-print .recentOrderTable tr td{font-size:14px}
+.sales-order-print .recentOrderTable .product-name{font-size:10px!important}
+.page-print .calculate-index-getorder .recentOrderTable tr td.last{text-align:left;text-indent:30px}
+.page-print .popup_brand_note{font-size:14px;padding:0 0 25px 25px}
+.page-print .my-account + .my-account + div{padding-top:50px}
+.page-print .my-account + .my-account + div .box-head h2{margin:0;margin-bottom:10px;color:#071553;font-family:'Roboto',sans-serif;font-size:18px;font-weight:700;font-style:normal;line-height:1.4;text-rendering:optimizeSpeed;text-transform:uppercase}
+@media screen and (max-width:650px) {
+.page-print.sales-order-print .col2-set .col-1,.sales-order-print .col-2{padding:20px!important;width:100%;float:none}
+.sales-order-print .box-account .box-head{padding:10px 20px!important;display:flex;flex-direction:column}
+.page-print .my-account .box-account.box-info{overflow:auto}
+.page-print .recentOrderTable{width:600px}
+}
+.btn_view_news{background-color: #0f3190 !important;}
+	.slides{height:500px;}
+
+
+

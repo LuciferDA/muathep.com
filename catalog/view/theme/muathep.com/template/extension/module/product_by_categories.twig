@@ -1,0 +1,77 @@
+{% if categories %}
+<div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
+    <div class="more-info-tab clearfix ">
+        <h3 class="new-product-title pull-left">{{ heading_title }}</h3>
+        <ul class="nav nav-tabs nav-tab-line pull-right" id="new-products-1">
+            {% for key, category in categories %}
+                <li {% if key == 0 %}class="active"{% endif %}><a data-transition-type="backSlide" href="#product-by-category-{{ key }}{{ category.category_id }}" data-toggle="tab">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+        <!-- /.nav-tabs -->
+    </div>
+    <div class="tab-content outer-top-xs">
+    {% for key, category in categories %}
+        <div class="tab-pane in {% if key == 0 %}active{% endif %}" id="product-by-category-{{ key }}{{ category.category_id }}">
+            <div class="product-slider">
+                {% if category.products %}
+                <div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
+                    {% for product in category.products %}
+                        <div class="item item-carousel">
+                            <div class="products">
+                                <div class="product">
+                                    <div class="product-image">
+                                        <div class="image">
+                                            <a href="{{ product.href }}"><img  src="{{ product.thumb }}" alt="{{ product.name }}"></a> </div>
+                                        <!-- /.image -->
+                                    </div>
+                                    <!-- /.product-image -->
+                                    <div class="product-info text-left">
+                                        <h3 class="name"><a href="{{ product.href }}">{{ product.name }}</a></h3>
+                                        <div class="description"></div>
+                                        <div class="product-price">
+                                            {% if product.price %}
+                                                {% if not product.special %}
+                                                    <span class="price"> {{ product.price }} </span>
+                                                {% else %}
+                                                    <span class="price">{{ product.special }}</span>
+                                                    <span class="price-before-discount">{{ product.price }}</span>
+                                                {% endif %}
+                                            {% endif %}
+                                        </div>
+                                        <!-- /.product-price -->
+                                    </div>
+                                    <!-- /.product-info -->
+                                    <div class="cart clearfix animate-effect">
+                                        <div class="action">
+                                            <ul class="list-unstyled">
+                                                <li class="add-cart-button btn-group">
+                                                    <button onclick="cart.add('{{ product.product_id }}');" data-toggle="tooltip" class="btn btn-primary icon" type="button" title="{{ button_cart }}"> <i class="fa fa-shopping-cart"></i> </button>
+                                                </li>
+                                                <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" onclick="wishlist.add('{{ product.product_id }}');" title="{{ button_wishlist }}"> <i class="icon fa fa-heart"></i> </a> </li>
+                                                <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" onclick="compare.add('{{ product.product_id }}');" title="{{ button_compare }}"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                                            </ul>
+                                        </div>
+                                        <!-- /.action -->
+                                    </div>
+                                    <!-- /.cart -->
+                                </div>
+                                <!-- /.product -->
+
+                            </div>
+                            <!-- /.products -->
+                        </div>
+                        <!-- /.item -->
+                    {% endfor %}
+                    <!-- /.item -->
+                </div>
+                {% endif %}
+            </div>
+            <!-- /.product-slider -->
+        </div>
+        <!-- /.tab-pane -->
+    {% endfor %}
+    </div>
+    <!-- /.tab-content -->
+</div>
+<!-- /.scroll-tabs -->
+{% endif %}

@@ -1,0 +1,96 @@
+{{ header }} {{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button type="submit" form="form-question" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        {% if answer %}<a href="{{ answer_action }}" data-toggle="tooltip" title="{{ button_send }}" class="btn btn-info"><i class="fa fa-envelope"></i></a>{% endif %}
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+      <h1>{{ heading_name }}</h1>
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li class="breadcrumb-item"><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    {% if success %}
+    <div class="alert alert-success"><i class="fa fa-exclamation-circle"></i> {{ success }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    <div class="panel panel-default">
+      <div class="panel-heading"><i class="fa fa-pencil"></i> {{ question_id ? heading_edit : heading_add }}</div>
+      <div class="panel-body">
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-question" class="form-horizontal">
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="input-customer">{{ entry_customer }}</label>
+						<div class="col-sm-10">
+              <div class="input-group">
+                <input type="text" value="{{ customer_name }}" placeholder="{{ entry_customer }}" id="input-customer" class="form-control" />
+                {% if customer_edit_url %}<div class="input-group-btn"><a href="{{ customer_edit_url }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a></div>{% endif %}
+              </div>
+              <input type="hidden" name="customer_id" value="{{ customer_id }}" />
+              {% if error_customer %}
+                <div class="text-danger">{{ error_customer }}</div>
+              {% endif %}
+            </div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="input-name">{{ entry_name }}</label>
+						<div class="col-sm-10">
+							<input type="text" name="name" value="{{ name }}" id="input-name" class="form-control" />
+              {% if error_name %}<div class="text-danger">{{ error_name }}</div>{% endif %}
+						</div>
+					</div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="input-product">{{ entry_product }}</label>
+            <div class="col-sm-10">
+              <input type="text" value="{{ product_name }}" placeholder="{{ entry_product }}" id="input-product" class="form-control" />
+              <input type="hidden" name="product_id" value="{{ product_id }}" />
+              {% if error_product %}
+                <div class="text-danger">{{ error_product }}</div>
+              {% endif %}
+            </div>
+          </div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="input-email">{{ entry_email }}</label>
+						<div class="col-sm-10">
+							<input type="email" name="email" value="{{ email }}" id="input-email" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="input-question">{{ entry_question }}</label>
+						<div class="col-sm-10">
+							<textarea name="question" id="input-question" class="form-control">{{ question }}</textarea>
+              {% if error_question %}<div class="text-danger">{{ error_question }}</div>{% endif %}
+						</div>
+					</div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="input-answer">{{ entry_answer }}</label>
+            <div class="col-sm-10">
+              <textarea name="answer" id="input-answer" class="form-control" data-toggle="summernote">{{ answer }}</textarea>
+              {% if error_answer %}<div class="text-danger">{{ error_answer }}</div>{% endif %}
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="input-status">{{ entry_status }}</label>
+            <div class="col-sm-10">
+              <select name="status" id="input-status" class="form-control">
+                <option value="1"{{ status ? ' selected="selected"' }}>{{ text_enabled }}</option>
+                <option value="0"{{ not status ? ' selected="selected"' }}>{{ text_disabled }}</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{ footer }}

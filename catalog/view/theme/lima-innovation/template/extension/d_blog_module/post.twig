@@ -1,0 +1,95 @@
+{{header}}
+<style>
+    {{custom_style}}
+</style>
+
+{% include template('partial/d_breadcrumb') %}
+
+    {% include template('partial/d_layout_open') %}
+
+        <div class="bm">
+            <div class="heading bm-post-info clearfix">
+                {% if edit %}<div class="btn-group btn-group-xs btn-edit" ><a class="btn btn-default " href="{{edit}}" target="_blank"><i class="fa fa-pencil"></i> {{text_edit}}</a></div>{% endif %}
+ 
+                <h1>{{heading_title}}</h1>
+                <span class="title-divider"></span>
+
+
+            </div>
+            <div class="content bm-post-content">
+                <div id="description" class="description">{{description}}</div>
+                {% if post_videos %}
+                    <div class="bm-videos">
+                        {% for post_video in post_videos %}
+                            <div class="bm-video">
+                                <h2>{{post_video.text}}</h2>
+                                <div style="text-align: center;">
+                                    {{post_video.code}}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if setting.post.tag_display and tags %}
+                <div class="tag">
+                    <span class="tag-title">{{text_tags}}</span>
+                    {% for tag in tags %}
+                        <a href="{{tag.href}}">{{tag.text}}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+
+                {% if setting.post.nav_display and (prev_post or next_post) %}
+                <div class="row post-nav">
+                    <div class="col-md-6 post-nav-left">
+                        {% if prev_post %}
+                            <a href="{{prev_post.href}}" class="media">
+                                {% if (prev_post.thumb) %}
+                                    <div class="media-left">
+                                         <img class="media-object"  src="{{prev_post.thumb}}" data-holder-rendered="true">
+                                    </div>
+                                {% endif %}
+                                <div class="media-body">
+                                    <div class="h4 media-heading">{{prev_post.text}}</div>
+                                    <div class="media-body">{{prev_post.short_description}}</div>
+                                </div>
+                            </a>
+                            {# <a class="btn btn-default" href="{{prev_post.href}}">⟵ {{prev_post.text}}</a> #}
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6 post-nav-right">
+                        {% if next_post %}
+                            <a href="{{next_post.href}}" class="media">
+                                {% if (next_post.thumb) %}
+                                    <div class="media-right">
+                                         <img class="media-object" src="{{next_post.thumb}}" data-holder-rendered="true">
+                                    </div>
+                                {% endif %}
+                                <div class="media-body">
+                                    <div class="h4 media-heading">{{next_post.text}}</div>
+                                    <div class="media-body">{{next_post.short_description}}</div>
+                                </div>
+                                
+                            </a>
+                            {# <a class="btn btn-default pull-right" href="{{next_post.href}}">{{next_post.text}} ⟶</a> #}
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <script>
+        $(function(){
+            $('.popup').magnificPopup({
+                type:'image',
+                gallery: {
+                    enabled:true
+                }
+            });
+        })
+        </script>
+
+    {% include template('partial/d_layout_close') %}
+{{footer}}

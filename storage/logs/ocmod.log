@@ -1,0 +1,858 @@
+2021-01-17 16:20:39 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Ajax Edit Product in Line
+
+FILE: admin/model/catalog/product.php
+CODE: public function getProduct($product_id) {
+LINE: 382
+
+FILE: admin/controller/catalog/product.php
+CODE: public function autocomplete() {
+LINE: 1271
+CODE: $special = $this->currency->format($product_special['price'], $this->config->get('config_currency'));
+LINE: 356
+CODE: $data['products'][] = array(
+LINE: 362
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: <img src="{{ product.image }}" alt="{{ product.name }}" class="img-thumbnail" />
+LINE: 104
+CODE: <span class="img-thumbnail list"><i class="fa fa-camera fa-2x"></i></span>
+LINE: 105
+CODE: {{ product.name }}
+LINE: 106
+CODE: {{ product.model }}
+LINE: 107
+CODE: {{ product.price }}
+LINE: 108
+LINE: 111
+CODE: {{ product.special }}
+LINE: 109
+CODE: {{ product.quantity }}
+LINE: 113
+CODE: {{ product.status }}
+LINE: 114
+CODE: <script type="text/javascript">
+LINE: 259
+----------------------------------------------------------------
+MOD: Auto URL amigável Admin
+CODE: $data['languages']
+LINE: 596
+
+FILE: admin/controller/catalog/category.php
+CODE: $data['languages']
+LINE: 359
+
+FILE: admin/controller/catalog/information.php
+CODE: $data['languages']
+LINE: 325
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 37
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: var attribute_row = {{ attribute_row }};
+LINE: 1316
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 52
+CODE: id="input-meta-title{{ language.language_id }}" class="form-control"
+LINE: 66
+CODE: name="product_seo_url[{{ store.store_id }}][{{ language.language_id }}]"
+LINE: 1077
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: <script type="text/javascript">
+LINE: 275
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+CODE: id="input-meta-title{{ language.language_id }}" class="form-control"
+LINE: 61
+CODE: name="category_seo_url[{{ store.store_id }}][{{ language.language_id }}]"
+LINE: 190
+
+FILE: admin/controller/catalog/manufacturer.php
+CODE: protected function getForm() {
+LINE: 248
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: {{ footer }}
+LINE: 129
+CODE: name="name"
+LINE: 35
+CODE: name="manufacturer_seo_url[{{ store.store_id }}][{{ language.language_id }}]"
+LINE: 85
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: <script type="text/javascript">
+LINE: 230
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 44
+CODE: id="input-meta-title{{ language.language_id }}" class="form-control"
+LINE: 60
+CODE: name="information_seo_url[{{ store.store_id }}][{{ language.language_id }}]"
+LINE: 147
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 337
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 353
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 72
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 506
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 514
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 47
+CODE: 'jpg',
+LINE: 241
+CODE: 'image/jpeg',
+LINE: 254
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+LINE: 33
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/localisation/language.php
+CODE: $language_data = $this->cache->get('language');
+LINE: 9
+
+FILE: system/config/catalog.php
+CODE: 'view/*/before' => array(
+LINE: 58
+CODE: 'controller/*/after'  => array(
+LINE: 63
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $template = new Template($this->registry->get('config')->get('template_engine'));
+LINE: 118
+
+FILE: system/library/template.php
+CODE: public function __construct($adaptor) {
+LINE: 21
+CODE: $this->adaptor = new $class();
+LINE: 28
+CODE: private $data = array();
+LINE: 8
+CODE: public function __construct() {
+LINE: 10
+CODE: \Twig_Autoloader::register();
+LINE: 21
+CODE: $this->twig = new \Twig_Environment($loader, $config);
+LINE: 54
+
+FILE: catalog/controller/event/theme.php
+CODE: $twig = new \Twig_Environment($loader, $config);
+LINE: 26
+----------------------------------------------------------------
+MOD: Export/Import Tool (V3.22) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 630
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 8
+
+FILE: admin/language/vi-vn/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+----------------------------------------------------------------
+MOD: File download for custom field upload
+
+FILE: admin/controller/customer/customer.php
+CODE: if (isset($this->request->post['custom_field'])) {
+LINE: 758
+LINE: 940
+
+FILE: admin/view/template/customer/customer_form.twig
+CODE: <button type="button" id="button-custom-field{{ custom_field.custom_field_id }}" data-loading-text="{{ text_loading }}" class="btn btn-default"><i class="fa fa-upload"></i> {{ button_upload }}</button>
+LINE: 189
+LINE: 656
+CODE: <button type="button" id="button-address{{ address_row }}-custom-field{{ custom_field.custom_field_id }}" data-loading-text="{{ text_loading }}" class="btn btn-default"><i class="fa fa-upload"></i> {{ button_upload }}</button>
+LINE: 476
+----------------------------------------------------------------
+MOD: Next-Cart: OpenCart Migration Module
+CODE: $catalog = array();
+LINE: 38
+----------------------------------------------------------------
+MOD: Pavo Flash Sale
+----------------------------------------------------------------
+MOD: Sainent Opencart 3.x SEO Url Issue Fix
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: } elseif ($key == 'path') {
+LINE: 161
+CODE: $marketplace = array();
+LINE: 190
+CODE: $_['text_layout']
+LINE: 34
+----------------------------------------------------------------
+2021-01-23 15:18:55 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Ajax Edit Product in Line
+
+FILE: admin/model/catalog/product.php
+CODE: public function getProduct($product_id) {
+LINE: 382
+
+FILE: admin/controller/catalog/product.php
+CODE: public function autocomplete() {
+LINE: 1271
+CODE: $special = $this->currency->format($product_special['price'], $this->config->get('config_currency'));
+LINE: 356
+CODE: $data['products'][] = array(
+LINE: 362
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: <img src="{{ product.image }}" alt="{{ product.name }}" class="img-thumbnail" />
+LINE: 104
+CODE: <span class="img-thumbnail list"><i class="fa fa-camera fa-2x"></i></span>
+LINE: 105
+CODE: {{ product.name }}
+LINE: 106
+CODE: {{ product.model }}
+LINE: 107
+CODE: {{ product.price }}
+LINE: 108
+LINE: 111
+CODE: {{ product.special }}
+LINE: 109
+CODE: {{ product.quantity }}
+LINE: 113
+CODE: {{ product.status }}
+LINE: 114
+CODE: <script type="text/javascript">
+LINE: 259
+----------------------------------------------------------------
+MOD: Auto URL amigável Admin
+CODE: $data['languages']
+LINE: 596
+
+FILE: admin/controller/catalog/category.php
+CODE: $data['languages']
+LINE: 359
+
+FILE: admin/controller/catalog/information.php
+CODE: $data['languages']
+LINE: 325
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 37
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: var attribute_row = {{ attribute_row }};
+LINE: 1316
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 52
+CODE: id="input-meta-title{{ language.language_id }}" class="form-control"
+LINE: 66
+CODE: name="product_seo_url[{{ store.store_id }}][{{ language.language_id }}]"
+LINE: 1077
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: <script type="text/javascript">
+LINE: 275
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+CODE: id="input-meta-title{{ language.language_id }}" class="form-control"
+LINE: 61
+CODE: name="category_seo_url[{{ store.store_id }}][{{ language.language_id }}]"
+LINE: 190
+
+FILE: admin/controller/catalog/manufacturer.php
+CODE: protected function getForm() {
+LINE: 248
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: {{ footer }}
+LINE: 129
+CODE: name="name"
+LINE: 35
+CODE: name="manufacturer_seo_url[{{ store.store_id }}][{{ language.language_id }}]"
+LINE: 85
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: <script type="text/javascript">
+LINE: 230
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 44
+CODE: id="input-meta-title{{ language.language_id }}" class="form-control"
+LINE: 60
+CODE: name="information_seo_url[{{ store.store_id }}][{{ language.language_id }}]"
+LINE: 147
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 337
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 353
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 72
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 506
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 514
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 47
+CODE: 'jpg',
+LINE: 241
+CODE: 'image/jpeg',
+LINE: 254
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+LINE: 33
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/localisation/language.php
+CODE: $language_data = $this->cache->get('language');
+LINE: 9
+
+FILE: system/config/catalog.php
+CODE: 'view/*/before' => array(
+LINE: 58
+CODE: 'controller/*/after'  => array(
+LINE: 63
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $template = new Template($this->registry->get('config')->get('template_engine'));
+LINE: 118
+
+FILE: system/library/template.php
+CODE: public function __construct($adaptor) {
+LINE: 21
+CODE: $this->adaptor = new $class();
+LINE: 28
+CODE: private $data = array();
+LINE: 8
+CODE: public function __construct() {
+LINE: 10
+CODE: \Twig_Autoloader::register();
+LINE: 21
+CODE: $this->twig = new \Twig_Environment($loader, $config);
+LINE: 54
+
+FILE: catalog/controller/event/theme.php
+CODE: $twig = new \Twig_Environment($loader, $config);
+LINE: 26
+----------------------------------------------------------------
+MOD: Email Template Questions
+
+FILE: catalog/controller/account/account.php
+CODE: $data['edit'] = $this->url->link('account/edit'
+LINE: 38
+
+FILE: catalog/view/theme/default/template/account/account.twig
+CODE: {{ text_my_newsletter }}
+LINE: 65
+
+FILE: catalog/view/theme/engine/template/account/account.twig
+CODE: {{ text_my_newsletter }}
+LINE: 61
+
+FILE: catalog/view/theme/lima-innovation/template/account/account.twig
+CODE: {{ text_my_newsletter }}
+LINE: 61
+
+FILE: catalog/view/theme/nou/template/account/account.twig
+CODE: {{ text_my_newsletter }}
+LINE: 61
+
+FILE: catalog/controller/product/product.php
+CODE: $data['review_status'] =
+LINE: 437
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ description }}
+LINE: 318
+CODE: {% if review_status
+LINE: 282
+CODE: id="tab-review"
+LINE: 375
+CODE: {% if review_status and not j3.document.isPopup() %}
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ footer }}
+LINE: 733
+
+FILE: catalog/view/theme/engine/template/product/product.twig
+CODE: {{ description }}
+LINE: 262
+CODE: {% if review_status
+LINE: 57
+CODE: id="tab-review"
+LINE: 311
+CODE: {% if review_status and not j3.document.isPopup() %}
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ footer }}
+LINE: 646
+
+FILE: catalog/view/theme/lima-innovation/template/product/product.twig
+CODE: {{ description }}
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/nou/template/product/product.twig
+CODE: {{ description }}
+LINE: 43
+CODE: {% if review_status
+LINE: 44
+CODE: id="tab-review"
+LINE: 91
+CODE: {% if review_status and not j3.document.isPopup() %}
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ footer }}
+LINE: 617
+----------------------------------------------------------------
+MOD: Export/Import Tool (V3.22) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 630
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 8
+
+FILE: admin/language/vi-vn/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+----------------------------------------------------------------
+MOD: File download for custom field upload
+
+FILE: admin/controller/customer/customer.php
+CODE: if (isset($this->request->post['custom_field'])) {
+LINE: 758
+LINE: 940
+
+FILE: admin/view/template/customer/customer_form.twig
+CODE: <button type="button" id="button-custom-field{{ custom_field.custom_field_id }}" data-loading-text="{{ text_loading }}" class="btn btn-default"><i class="fa fa-upload"></i> {{ button_upload }}</button>
+LINE: 189
+LINE: 656
+CODE: <button type="button" id="button-address{{ address_row }}-custom-field{{ custom_field.custom_field_id }}" data-loading-text="{{ text_loading }}" class="btn btn-default"><i class="fa fa-upload"></i> {{ button_upload }}</button>
+LINE: 476
+----------------------------------------------------------------
+MOD: Next-Cart: OpenCart Migration Module
+CODE: $catalog = array();
+LINE: 38
+----------------------------------------------------------------
+MOD: Pavo Flash Sale
+----------------------------------------------------------------
+MOD: Sainent Opencart 3.x SEO Url Issue Fix
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: } elseif ($key == 'path') {
+LINE: 161
+CODE: $marketplace = array();
+LINE: 190
+CODE: $_['text_layout']
+LINE: 34
+----------------------------------------------------------------
+2021-01-23 15:20:17 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Ajax Edit Product in Line
+
+FILE: admin/model/catalog/product.php
+CODE: public function getProduct($product_id) {
+LINE: 382
+
+FILE: admin/controller/catalog/product.php
+CODE: public function autocomplete() {
+LINE: 1271
+CODE: $special = $this->currency->format($product_special['price'], $this->config->get('config_currency'));
+LINE: 356
+CODE: $data['products'][] = array(
+LINE: 362
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: <img src="{{ product.image }}" alt="{{ product.name }}" class="img-thumbnail" />
+LINE: 104
+CODE: <span class="img-thumbnail list"><i class="fa fa-camera fa-2x"></i></span>
+LINE: 105
+CODE: {{ product.name }}
+LINE: 106
+CODE: {{ product.model }}
+LINE: 107
+CODE: {{ product.price }}
+LINE: 108
+LINE: 111
+CODE: {{ product.special }}
+LINE: 109
+CODE: {{ product.quantity }}
+LINE: 113
+CODE: {{ product.status }}
+LINE: 114
+CODE: <script type="text/javascript">
+LINE: 259
+----------------------------------------------------------------
+MOD: Auto URL amigável Admin
+CODE: $data['languages']
+LINE: 596
+
+FILE: admin/controller/catalog/category.php
+CODE: $data['languages']
+LINE: 359
+
+FILE: admin/controller/catalog/information.php
+CODE: $data['languages']
+LINE: 325
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 37
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: var attribute_row = {{ attribute_row }};
+LINE: 1316
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 52
+CODE: id="input-meta-title{{ language.language_id }}" class="form-control"
+LINE: 66
+CODE: name="product_seo_url[{{ store.store_id }}][{{ language.language_id }}]"
+LINE: 1077
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: <script type="text/javascript">
+LINE: 275
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+CODE: id="input-meta-title{{ language.language_id }}" class="form-control"
+LINE: 61
+CODE: name="category_seo_url[{{ store.store_id }}][{{ language.language_id }}]"
+LINE: 190
+
+FILE: admin/controller/catalog/manufacturer.php
+CODE: protected function getForm() {
+LINE: 248
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: {{ footer }}
+LINE: 129
+CODE: name="name"
+LINE: 35
+CODE: name="manufacturer_seo_url[{{ store.store_id }}][{{ language.language_id }}]"
+LINE: 85
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: <script type="text/javascript">
+LINE: 230
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 44
+CODE: id="input-meta-title{{ language.language_id }}" class="form-control"
+LINE: 60
+CODE: name="information_seo_url[{{ store.store_id }}][{{ language.language_id }}]"
+LINE: 147
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 337
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 353
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 72
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 506
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 514
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 47
+CODE: 'jpg',
+LINE: 241
+CODE: 'image/jpeg',
+LINE: 254
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+LINE: 33
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/localisation/language.php
+CODE: $language_data = $this->cache->get('language');
+LINE: 9
+
+FILE: system/config/catalog.php
+CODE: 'view/*/before' => array(
+LINE: 58
+CODE: 'controller/*/after'  => array(
+LINE: 63
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $template = new Template($this->registry->get('config')->get('template_engine'));
+LINE: 118
+
+FILE: system/library/template.php
+CODE: public function __construct($adaptor) {
+LINE: 21
+CODE: $this->adaptor = new $class();
+LINE: 28
+CODE: private $data = array();
+LINE: 8
+CODE: public function __construct() {
+LINE: 10
+CODE: \Twig_Autoloader::register();
+LINE: 21
+CODE: $this->twig = new \Twig_Environment($loader, $config);
+LINE: 54
+
+FILE: catalog/controller/event/theme.php
+CODE: $twig = new \Twig_Environment($loader, $config);
+LINE: 26
+----------------------------------------------------------------
+MOD: Email Template Questions
+
+FILE: catalog/controller/account/account.php
+CODE: $data['edit'] = $this->url->link('account/edit'
+LINE: 38
+
+FILE: catalog/view/theme/default/template/account/account.twig
+CODE: {{ text_my_newsletter }}
+LINE: 65
+
+FILE: catalog/view/theme/engine/template/account/account.twig
+CODE: {{ text_my_newsletter }}
+LINE: 61
+
+FILE: catalog/view/theme/lima-innovation/template/account/account.twig
+CODE: {{ text_my_newsletter }}
+LINE: 61
+
+FILE: catalog/view/theme/nou/template/account/account.twig
+CODE: {{ text_my_newsletter }}
+LINE: 61
+
+FILE: catalog/controller/product/product.php
+CODE: $data['review_status'] =
+LINE: 437
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ description }}
+LINE: 318
+CODE: {% if review_status
+LINE: 282
+CODE: id="tab-review"
+LINE: 375
+CODE: {% if review_status and not j3.document.isPopup() %}
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ footer }}
+LINE: 733
+
+FILE: catalog/view/theme/engine/template/product/product.twig
+CODE: {{ description }}
+LINE: 262
+CODE: {% if review_status
+LINE: 57
+CODE: id="tab-review"
+LINE: 311
+CODE: {% if review_status and not j3.document.isPopup() %}
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ footer }}
+LINE: 646
+
+FILE: catalog/view/theme/lima-innovation/template/product/product.twig
+CODE: {{ description }}
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/nou/template/product/product.twig
+CODE: {{ description }}
+LINE: 43
+CODE: {% if review_status
+LINE: 44
+CODE: id="tab-review"
+LINE: 91
+CODE: {% if review_status and not j3.document.isPopup() %}
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ footer }}
+LINE: 617
+----------------------------------------------------------------
+MOD: Export/Import Tool (V3.22) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 630
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 8
+
+FILE: admin/language/vi-vn/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+----------------------------------------------------------------
+MOD: File download for custom field upload
+
+FILE: admin/controller/customer/customer.php
+CODE: if (isset($this->request->post['custom_field'])) {
+LINE: 758
+LINE: 940
+
+FILE: admin/view/template/customer/customer_form.twig
+CODE: <button type="button" id="button-custom-field{{ custom_field.custom_field_id }}" data-loading-text="{{ text_loading }}" class="btn btn-default"><i class="fa fa-upload"></i> {{ button_upload }}</button>
+LINE: 189
+LINE: 656
+CODE: <button type="button" id="button-address{{ address_row }}-custom-field{{ custom_field.custom_field_id }}" data-loading-text="{{ text_loading }}" class="btn btn-default"><i class="fa fa-upload"></i> {{ button_upload }}</button>
+LINE: 476
+----------------------------------------------------------------
+MOD: Next-Cart: OpenCart Migration Module
+CODE: $catalog = array();
+LINE: 38
+----------------------------------------------------------------
+MOD: Pavo Flash Sale
+----------------------------------------------------------------
+MOD: Sainent Opencart 3.x SEO Url Issue Fix
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: } elseif ($key == 'path') {
+LINE: 161
+CODE: $marketplace = array();
+LINE: 190
+CODE: $_['text_layout']
+LINE: 34
+----------------------------------------------------------------

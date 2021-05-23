@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+
+
+html, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i, a,
+dl, dt, dd, ol, ul, li,
+fieldset, input, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:top;
+    background:transparent;
+
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block;}
+nav ul {list-style:none;}
+ul, li{ list-style:none;}
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after, q:before, q:after { content:''; content:none;}
+del { text-decoration: line-through;}
+abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help;}
+table { border-collapse:collapse; border-spacing:0;}
+hr { display:block; height:1px; border:0; border-top:1px solid #cccccc; margin:1em 0; padding:0;}
+input, select { vertical-align:middle; font-size:13px;}
+.clear{display:block; clear:both; margin:0; padding:0;}
+.clearfix:after,.header:after,.container:after
+{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+
+.clearfix{zoom:1}
+a{text-decoration:none;  color:#31C0EC; }
+a:hover{outline:none; color:#152545; text-decoration:none;}
+/*********************************************************************/

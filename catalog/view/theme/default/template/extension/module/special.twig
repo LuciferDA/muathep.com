@@ -1,0 +1,50 @@
+<div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs hidden-xs">
+    <h3 class="section-title">{{ heading_title }}</h3>
+    <div class="owl-carousel sidebar-carousel custom-carousel owl-theme outer-top-ss">
+        {% for product in products %}
+            <div class="item">
+                <div class="products">
+                    <div class="hot-deal-wrapper">
+                        <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}"
+                                                                             alt="{{ product.name }}"
+                                                                             title="{{ product.name }}"
+                                                                             class="img-responsive"/></a></div>
+                        {% if product.percent %}
+                            <div class="sale-offer-tag"><span>-{{ product.percent }}%</span></div>
+                        {% endif %}
+                    </div>
+                    <!-- /.hot-deal-wrapper -->
+                    <div class="product-info text-left m-t-20">
+                        <h3 class="name"><a href="{{ product.href }}">{{ product.name }}</a></h3>
+                        <div class="product-price">
+                            {% if product.price %}
+                                {% if not product.special %}
+                                    <span class="price"> {{ product.price }} </span>
+                                {% else %}
+                                    <span class="price">{{ product.special }}</span>
+                                    <span class="price-before-discount">{{ product.price }}</span>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                        <!-- /.product-price -->
+                    </div>
+                    <!-- /.product-info -->
+                    <div class="cart clearfix animate-effect">
+                        <div class="action">
+                            <div class="add-cart-button btn-group">
+                                <button class="btn btn-primary icon" data-toggle="dropdown"
+                                        onclick="cart.add('{{ product.product_id }}');" type="button"><i
+                                            class="fa fa-shopping-cart"></i></button>
+                                <button class="btn btn-primary cart-btn" onclick="cart.add('{{ product.product_id }}');"
+                                        type="button">{{ button_cart }}</button>
+                            </div>
+                        </div>
+                        <!-- /.action -->
+                    </div>
+                    <!-- /.cart -->
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- /.sidebar-widget -->
+</div>

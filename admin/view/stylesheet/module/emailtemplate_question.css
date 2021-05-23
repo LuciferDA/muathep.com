@@ -1,0 +1,7 @@
+@media (min-width: 1200px) {
+    #filter-collapse {
+        display: block !important;
+    }
+}
+.btn-group-toggle > .btn.active.success > i { color: #459046; }
+.btn-group-toggle > .btn.active.danger > i { color: #a94442; }

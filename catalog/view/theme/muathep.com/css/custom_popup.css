@@ -1,0 +1,122 @@
+#vss_solo_signup_subscribe{float:left;margin-top:10px;width:10%}
+.vss_loading_pic{margin-top:20px;margin-right:20px;float:left}
+#vss_solo_login_error_box{color:red}
+#vss_solo_forgot_error_box{color:red}
+#vss_solo_signup_error_box{color:red}
+#vss_solo_forgot_msg_box{color:green}
+#vss_solo_blank .vss_solo_login_input{background:#f7f7f7; border-radius:25px !important; border:none; font-weight: 500; font-size: 14px; color:#8791a6; height:45px; line-height:45px; width:100%; max-width:inherit; box-sizing:border-box; padding:0 0 0 40px;}
+#vss_solo_blank select{background:#f7f7f7; border-radius:25px !important; border:none; font-weight: 500; font-size: 14px; color:#8791a6; height:45px; line-height:45px; width:100%; max-width:inherit; box-sizing:border-box; padding:0 0 0 40px;}
+#vss_solo_blank .vss_solo_login_input::placeholder{ font-size:14px; color:#8791a6;}
+#vss_solo_blank #vss_solo_forgot_form .vss_solo_login_input{ text-align:center; }
+.vss_solo_login_input_pass{background:none repeat scroll 0 0 #FCFCFC;border:1px solid #D2D2D2;float:right;font-size:12px;outline:0 none;padding:5px 10px;width:35%;margin-bottom:5px}
+.vss_cusor{cursor:pointer;text-decoration:none}
+.vss_solo_login_label{float:left;font:12px/34px arial;margin-right:5px;text-align:right;width:22%;margin-bottom:5px}
+.vss_solo_head{ text-align:center;}
+.vss_solo_head h2{}
+#vss_solo_popup_parent form{margin:0!important}
+#vss_solo_blank .clearfix:before,.clearfix:after,.dl-horizontal dd:before,.dl-horizontal dd:after,.container:before,.container:after,.container-fluid:before,.container-fluid:after,.row:before,.row:after,.form-horizontal .form-group:before,.form-horizontal .form-group:after,.btn-toolbar:before,.btn-toolbar:after,.btn-group-vertical > .btn-group:before,.btn-group-vertical > .btn-group:after,.nav:before,.nav:after,.navbar:before,.navbar:after,.navbar-header:before,.navbar-header:after,.navbar-collapse:before,.navbar-collapse:after,.pager:before,.pager:after,.panel-body:before,.panel-body:after,.modal-footer:before,.modal-footer:after{content:" ";display:table}
+#vss_solo_blank :before,:after{-moz-box-sizing:border-box}
+#vss_solo_blank .clearfix:after,.dl-horizontal dd:after,.container:after,.container-fluid:after,.row:after,.form-horizontal .form-group:after,.btn-toolbar:after,.btn-group-vertical > .btn-group:after,.nav:after,.navbar:after,.navbar-header:after,.navbar-collapse:after,.pager:after,.panel-body:after,.modal-footer:after{clear:both}
+#vss_solo_blank .clearfix:before,.clearfix:after,.dl-horizontal dd:before,.dl-horizontal dd:after,.container:before,.container:after,.container-fluid:before,.container-fluid:after,.row:before,.row:after,.form-horizontal .form-group:before,.form-horizontal .form-group:after,.btn-toolbar:before,.btn-toolbar:after,.btn-group-vertical > .btn-group:before,.btn-group-vertical > .btn-group:after,.nav:before,.nav:after,.navbar:before,.navbar:after,.navbar-header:before,.navbar-header:after,.navbar-collapse:before,.navbar-collapse:after,.pager:before,.pager:after,.panel-body:before,.panel-body:after,.modal-footer:before,.modal-footer:after{content:" ";display:table}
+#vss_solo_blank :before,:after{-moz-box-sizing:border-box}
+#vss_solo_blank *{-moz-box-sizing:border-box}
+#vss_solo_blank{background-color:rgba(17,24,38,0.81)}
+#vss_solo_blank .glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-style:normal;font-weight:400;line-height:1;font-size:15px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+#vss_solo_blank .glyphicon-lock:before{content:"\e033"}
+#vss_solo_blank .glyphicon-pencil:before{content:"\270f"}
+#vss_solo_panel_icon div.vss_solo_panel-heading{padding:0}
+#vss_solo_panel_icon div.vss_solo_panel-heading h3{padding:5px;font-size:14px;text-align:left}
+#vss_solo_login_form,#vss_solo_forgot_form,#vss_solo_signup_form{ max-width:390px; margin:0 auto; text-align:center;}
+#vss_solo_login_form div.content{min-height:250px}
+#vss_solo_blank .vss_solo_panel-body{ margin-top:41px;}
+#vss_solo_blank .vss_solo_panel-heading{padding:10px 15px;border-bottom:1px solid transparent;border-top-left-radius:3px;border-top-right-radius:3px}
+#vss_solo_blank .vss_solo_panel-heading > .dropdown .dropdown-toggle{color:inherit}
+.vss_solo_panel-title{margin-top:0;margin-bottom:0;font-size:16px;color:inherit}
+.vss_solo_panel-title > a{color:inherit}
+.vss_solo_panel-footer{padding:10px 15px;background-color:#f5f5f5;border-top:1px solid #ddd;border-bottom-right-radius:3px;border-bottom-left-radius:3px}
+.vss_solo_panel > .list-group{margin-bottom:0}
+.vss_solo_panel > .list-group .list-group-item{border-width:1px 0;border-radius:0}
+.vss_solo_panel > .list-group:first-child .list-group-item:first-child{border-top:0;border-top-left-radius:3px;border-top-right-radius:3px}
+.vss_solo_panel > .list-group:last-child .list-group-item:last-child{border-bottom:0;border-bottom-right-radius:3px;border-bottom-left-radius:3px}
+.vss_solo_panel-heading + .list-group .list-group-item:first-child{border-top-width:0}
+.list-group + .vss_solo_panel-footer{border-top-width:0}
+.vss_solo_panel > .table,.vss_solo_panel > .table-responsive > .table,.vss_solo_panel > .vss_solo_panel-collapse > .table{margin-bottom:0}
+.vss_solo_panel > .table:first-child,.vss_solo_panel > .table-responsive:first-child > .table:first-child{border-top-left-radius:3px;border-top-right-radius:3px}
+.vss_solo_panel > .table:first-child > thead:first-child > tr:first-child td:first-child,.vss_solo_panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,.vss_solo_panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,.vss_solo_panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,.vss_solo_panel > .table:first-child > thead:first-child > tr:first-child th:first-child,.vss_solo_panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,.vss_solo_panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,.vss_solo_panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child{border-top-left-radius:3px}
+.vss_solo_panel > .table:first-child > thead:first-child > tr:first-child td:last-child,.vss_solo_panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,.vss_solo_panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,.vss_solo_panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,.vss_solo_panel > .table:first-child > thead:first-child > tr:first-child th:last-child,.vss_solo_panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,.vss_solo_panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,.vss_solo_panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child{border-top-right-radius:3px}
+.vss_solo_panel > .table:last-child,.vss_solo_panel > .table-responsive:last-child > .table:last-child{border-bottom-right-radius:3px;border-bottom-left-radius:3px}
+.vss_solo_panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,.vss_solo_panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,.vss_solo_panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,.vss_solo_panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,.vss_solo_panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,.vss_solo_panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,.vss_solo_panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,.vss_solo_panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child{border-bottom-left-radius:3px}
+.vss_solo_panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,.vss_solo_panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,.vss_solo_panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,.vss_solo_panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,.vss_solo_panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,.vss_solo_panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,.vss_solo_panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,.vss_solo_panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child{border-bottom-right-radius:3px}
+.vss_solo_panel > .vss_solo_panel-body + .table,.vss_solo_panel > .vss_solo_panel-body + .table-responsive{border-top:1px solid #ddd}
+.vss_solo_panel > .table > tbody:first-child > tr:first-child th,.vss_solo_panel > .table > tbody:first-child > tr:first-child td{border-top:0}
+.vss_solo_panel > .table-bordered,.vss_solo_panel > .table-responsive > .table-bordered{border:0}
+.vss_solo_panel > .table-bordered > thead > tr > th:first-child,.vss_solo_panel > .table-responsive > .table-bordered > thead > tr > th:first-child,.vss_solo_panel > .table-bordered > tbody > tr > th:first-child,.vss_solo_panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,.vss_solo_panel > .table-bordered > tfoot > tr > th:first-child,.vss_solo_panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,.vss_solo_panel > .table-bordered > thead > tr > td:first-child,.vss_solo_panel > .table-responsive > .table-bordered > thead > tr > td:first-child,.vss_solo_panel > .table-bordered > tbody > tr > td:first-child,.vss_solo_panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,.vss_solo_panel > .table-bordered > tfoot > tr > td:first-child,.vss_solo_panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child{border-left:0}
+.vss_solo_panel > .table-bordered > thead > tr > th:last-child,.vss_solo_panel > .table-responsive > .table-bordered > thead > tr > th:last-child,.vss_solo_panel > .table-bordered > tbody > tr > th:last-child,.vss_solo_panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,.vss_solo_panel > .table-bordered > tfoot > tr > th:last-child,.vss_solo_panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,.vss_solo_panel > .table-bordered > thead > tr > td:last-child,.vss_solo_panel > .table-responsive > .table-bordered > thead > tr > td:last-child,.vss_solo_panel > .table-bordered > tbody > tr > td:last-child,.vss_solo_panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,.vss_solo_panel > .table-bordered > tfoot > tr > td:last-child,.vss_solo_panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child{border-right:0}
+.vss_solo_panel > .table-bordered > thead > tr:first-child > td,.vss_solo_panel > .table-responsive > .table-bordered > thead > tr:first-child > td,.vss_solo_panel > .table-bordered > tbody > tr:first-child > td,.vss_solo_panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,.vss_solo_panel > .table-bordered > thead > tr:first-child > th,.vss_solo_panel > .table-responsive > .table-bordered > thead > tr:first-child > th,.vss_solo_panel > .table-bordered > tbody > tr:first-child > th,.vss_solo_panel > .table-responsive > .table-bordered > tbody > tr:first-child > th{border-bottom:0}
+.vss_solo_panel > .table-bordered > tbody > tr:last-child > td,.vss_solo_panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,.vss_solo_panel > .table-bordered > tfoot > tr:last-child > td,.vss_solo_panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,.vss_solo_panel > .table-bordered > tbody > tr:last-child > th,.vss_solo_panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,.vss_solo_panel > .table-bordered > tfoot > tr:last-child > th,.vss_solo_panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th{border-bottom:0}
+.vss_solo_panel > .table-responsive{margin-bottom:0;border:0}
+.vss_solo_panel-group{margin-bottom:20px}
+.vss_solo_panel-group .vss_solo_panel{margin-bottom:0;border-radius:4px}
+.vss_solo_panel-group .vss_solo_panel + .vss_solo_panel{margin-top:5px}
+.vss_solo_panel-group .vss_solo_panel-heading{border-bottom:0}
+.vss_solo_panel-group .vss_solo_panel-heading + .vss_solo_panel-collapse > .vss_solo_panel-body{border-top:1px solid #ddd}
+.vss_solo_panel-group .vss_solo_panel-footer{border-top:0}
+.vss_solo_panel-group .vss_solo_panel-footer + .vss_solo_panel-collapse .vss_solo_panel-body{border-bottom:1px solid #ddd}
+.vss_solo_panel-default{border-color:#ddd}
+.vss_solo_panel-default > .vss_solo_panel-heading{color:#333;background-color:#f5f5f5;border-color:#ddd}
+.vss_solo_panel-default > .vss_solo_panel-heading + .vss_solo_panel-collapse > .vss_solo_panel-body{border-top-color:#ddd}
+.vss_solo_panel-default > .vss_solo_panel-heading .badge{color:#f5f5f5;background-color:#333}
+.vss_solo_panel-default > .vss_solo_panel-footer + .vss_solo_panel-collapse > .vss_solo_panel-body{border-bottom-color:#ddd}
+#vss_solo_blank .vss_solo_panel-primary{border:none}
+.vss_solo_panel-primary > .vss_solo_panel-heading{color:#fff;background-color:#428bca;border-color:#428bca}
+.vss_solo_panel-primary > .vss_solo_panel-heading + .vss_solo_panel-collapse > .vss_solo_panel-body{border-top-color:#428bca}
+.vss_solo_panel-primary > .vss_solo_panel-heading .badge{color:#428bca;background-color:#fff}
+.vss_solo_panel-primary > .vss_solo_panel-footer + .vss_solo_panel-collapse > .vss_solo_panel-body{border-bottom-color:#428bca}
+.vss_solo_panel-success{border-color:#d6e9c6}
+.vss_solo_panel-success > .vss_solo_panel-heading{color:#3c763d;background-color:#dff0d8;border-color:#d6e9c6}
+.vss_solo_panel-success > .vss_solo_panel-heading + .vss_solo_panel-collapse > .vss_solo_panel-body{border-top-color:#d6e9c6}
+.vss_solo_panel-success > .vss_solo_panel-heading .badge{color:#dff0d8;background-color:#3c763d}
+.vss_solo_panel-success > .vss_solo_panel-footer + .vss_solo_panel-collapse > .vss_solo_panel-body{border-bottom-color:#d6e9c6}
+.vss_solo_panel-info{border-color:#bce8f1}
+.vss_solo_panel-info > .vss_solo_panel-heading{color:#31708f;background-color:#d9edf7;border-color:#bce8f1}
+.vss_solo_panel-info > .vss_solo_panel-heading + .vss_solo_panel-collapse > .vss_solo_panel-body{border-top-color:#bce8f1}
+.vss_solo_panel-info > .vss_solo_panel-heading .badge{color:#d9edf7;background-color:#31708f}
+.vss_solo_panel-info > .vss_solo_panel-footer + .vss_solo_panel-collapse > .vss_solo_panel-body{border-bottom-color:#bce8f1}
+.vss_solo_panel-warning{border-color:#faebcc}
+.vss_solo_panel-warning > .vss_solo_panel-heading{color:#8a6d3b;background-color:#fcf8e3;border-color:#faebcc}
+.vss_solo_panel-warning > .vss_solo_panel-heading + .vss_solo_panel-collapse > .vss_solo_panel-body{border-top-color:#faebcc}
+.vss_solo_panel-warning > .vss_solo_panel-heading .badge{color:#fcf8e3;background-color:#8a6d3b}
+.vss_solo_panel-warning > .vss_solo_panel-footer + .vss_solo_panel-collapse > .vss_solo_panel-body{border-bottom-color:#faebcc}
+.vss_solo_panel-danger{border-color:#ebccd1}
+.vss_solo_panel-danger > .vss_solo_panel-heading{color:#a94442;background-color:#f2dede;border-color:#ebccd1}
+.vss_solo_panel-danger > .vss_solo_panel-heading + .vss_solo_panel-collapse > .vss_solo_panel-body{border-top-color:#ebccd1}
+.vss_solo_panel-danger > .vss_solo_panel-heading .badge{color:#f2dede;background-color:#a94442}
+.vss_solo_panel-danger > .vss_solo_panel-footer + .vss_solo_panel-collapse > .vss_solo_panel-body{border-bottom-color:#ebccd1}
+.vss_solo_panel_item{display:inline;margin-right:15px}
+.vss_solo_container{max-width:500%;display:inline-flex}
+#vss_solo_blank{display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000; overflow:auto;}
+#vss_solo_popup_parent{width:630px; position:relative;top:150px;z-index:1000000;margin:auto;opacity:1!important; background:#fff; border-radius:15px;}
+#vss_solo_popup_close{cursor:pointer;}
+#vss_close_pic{width:40px;height:40px}
+#vss_solo{width:100%}
+@media only screen and (max-width:700px) {
+#vss_solo_popup_parent{ top:20px; width:96%; margin:0 auto;}	
+#vss_solo_login_form,#vss_solo_login_form, #vss_solo_forgot_form,#vss_solo_signup_form{ width:96%; max-width:inherit;}
+.vss_solo_submit{ width:100%;}
+}
+@media only screen and (max-width:500px) {
+#vss_solo_popup_close{ top:20px; left:calc(100% - 48px); }
+.vss_solo_head h2{ font-size: 20px; margin:0 0 20px 0;}
+#vss_solo_blank .vss_solo_panel-body{ margin-top:20px;}
+#vss_solo_blank .vss_solo_login_input{ font-size: 14px; height:45px; line-height:45px;}
+.vss_solo_submit{ padding:17px 0 16px 0;}
+.vss_olinks,.vss_olinks a,.modal_contact span,.modal_support a{ font-size: 14px;}
+#vss_solo_blank .modal_footer{ margin:10px 0 0 0;}
+.modal_contact img{ max-width:35px;}
+.modal_support img{ max-width:35px;}
+.vss_forget{ margin-top:10px;}
+.vss_forget h3{ font-size: 18px; margin:0 0 10px 0;}
+.vss_forget p{ font-size: 14px; margin:0 0 20px 0;}
+.vss_right br{ display:none;}
+#vss_solo_blank #vss_solo_forgot_form .vss_solo_login_input{ text-align: left;}
+}

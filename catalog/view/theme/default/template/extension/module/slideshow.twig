@@ -1,0 +1,22 @@
+<div id="hero">
+    <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+        {% for banner in banners %}
+        <div class="item" style="background-image: url({{ banner.image }});">
+            <div class="container-fluid">
+                <div class="caption bg-color vertical-center text-left">
+                    <div class="big-text fadeInDown-1"> <span class="highlight">{{ banner.title }}</span></div>
+                    {% if banner.link %}
+                    <div class="button-holder fadeInDown-3">
+                        <a href="{{ banner.link }}" class="btn-lg btn btn-uppercase btn-primary shop-now-button">{{ text_detail }}</a>
+                    </div>
+                    {% endif %}
+                </div>
+                <!-- /.caption -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        {% endfor %}
+    </div>
+    <!-- /.owl-carousel -->
+</div>
+<!-- ========================================= SECTION – HERO : END ========================================= -->

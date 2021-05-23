@@ -1,0 +1,20 @@
+<!-- > d_layout_open -->
+<div id="information-information" class="main-container container res">
+    {% include template('partial/d_notification') %}
+    <div class="row">
+        {{column_left}}
+        {% if column_left %}
+                {% if column_right %}
+                    <div id="content" data-route="{{ page_route }}" class="{{class}} col-sm-6 single-blog">
+                {% else %}
+                    <div id="content" data-route="{{ page_route }}" class="{{class}} col-sm-9 single-blog">
+                {% endif %}
+        {% else %}
+            {% if column_right %}
+                <div id="content" data-route="{{ page_route }}" class="{{class}} col-sm-9 single-blog">
+            {% else %}
+                <div id="content" data-route="{{ page_route }}" class="{{class}} col-sm-12 single-blog">
+            {% endif %}
+        {% endif %}
+        {{content_top}}
+<!-- /> d_layout_open -->

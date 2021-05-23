@@ -1,0 +1,104 @@
+<div id="banner" class="clearfix">
+                        <div class="before-bannerload hide"><img alt="Default Banner" src="catalog/view/theme/muathep.com/media/bannerslider/w/e/web_banner_01.jpg"></div>
+                        <div class="banner-slider">
+                           <div class="magestore-bannerslider">
+                              <div class="magestore-bannerslider-standard">
+                                 <!--<script type="text/javascript" src=""></script>-->
+                                 <!--<script src=""></script>-->
+                                 <link rel="stylesheet" type="text/css" href="catalog/view/theme/muathep.com/css/flexslider.css" media="all" />
+                                 <script type="text/javascript">   
+                                    var j7 = jQuery.noConflict();
+                                 </script>
+                                 <style>
+                                 </style>
+                                 <div class="flexslider flexslider-7-1">
+                                    <!-- <ul class="bs-icons">
+                                       <li>
+                                          <a href="https://www.facebook.com/SteelonCall" target="_blank">
+                                          <i class="sprite1 sprite-bs1"></i>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="https://twitter.com/SteelonCall"  target="_blank">
+                                          <i class="sprite1 sprite-bs2"></i>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="https://www.linkedin.com/company/steelon-call/"  target="_blank">
+                                          <i class="sprite1 sprite-bs3"></i>
+                                          </a>
+                                       </li>
+                                       <li>
+                                          <a href="https://www.youtube.com/channel/UCUAxr-p0mLdx-V4XauDgdJw"  target="_blank">
+                                          <i class="sprite1 sprite-bs4"></i>
+                                          </a>
+                                       </li>
+                                    </ul> -->
+                                    <ul class="slides" >
+                                      {% if banners %}
+                                        {% for banner in banners %}
+                                       <li>
+                                          <a href="javascript:void(0);" target="_self" onclick="bannerClicks('1','1')" style="display:block;"><img alt="{{banner.title}}" src="{{banner.image}}"   style="display:none" class="slds"/> 
+                                          </a>
+                                          <div class="ban_text">
+                                             <h1>{{banner.title}}</h1>
+                                             <p>{{banner.link}}</p>
+                                             <h6>
+                                                <a href="#">Lấy báo giá</a>
+                                                <a href='#' class="btn_view_news">Xem tin tức</a></h6>
+                                          </div>
+                                       </li>
+                                       {% endfor %}
+                                      {% endif %}
+                                       <!-- items mirrored twice, total of 12 -->
+                                      }
+                                    </ul>
+                                 </div>
+                                 <script type="text/javascript">
+                                    function bannerClicks(id_banner,id_slider){
+                                    var click_url = 'catalog/view/theme/muathep.com/bannerslider/index/click/index.html';
+                                    var banner_id = id_banner;
+                                    
+                                    
+                                    new Ajax.Request(click_url,{
+                                    method: 'post',
+                                    parameters:{id_banner: banner_id, slider_id:id_slider},
+                                    onFailure: '',
+                                    onSuccess: ''
+                                    
+                                    });
+                                    
+                                    
+                                    }
+                                    
+                                    $j('#bodycon .container .main-container .slide a img').fadeOut();
+                                    setTimeout(function() {   hideImg(); }, 10);
+                                    function  hideImg()
+                                    {
+                                    
+                                    $j('.banner-img').addClass('hidc');
+                                    $j('.slds').fadeIn('slow');
+                                    if($j('.slds').fadeIn('slow')){
+                                    $j('#bodycon .container .main-container .slide a img').fadeIn(10);
+                                    }
+                                    
+                                    }
+                                 </script>
+                              </div>
+                           </div>
+                           <script type="text/javascript">
+                              Event.observe(window, 'load', function() {
+                                  banner_ids = '1';
+                                  slider_id = '1';
+                                  imp_url = 'catalog/view/theme/muathep.com/bannerslider/index/impress/index.html';
+                                  new Ajax.Request(imp_url, {
+                                      method: 'post',
+                                      parameters:{banner_ids: banner_ids, slider_id:slider_id},
+                                      onFailure: '',
+                                      onSuccess: ''
+                              
+                                  });
+                              });
+                           </script>
+                        </div>
+                     </div>

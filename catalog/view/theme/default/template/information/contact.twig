@@ -1,0 +1,103 @@
+{{ header }}{{ column_left }}
+<div class="breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-inner">
+            <ul class="list-inline list-unstyled">
+                {% for breadcrumb in breadcrumbs %}
+                    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- /.breadcrumb-inner -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.breadcrumb -->
+<div class="body-content">
+    <div class="container">
+        <div class="contact-page" style="margin-bottom: 20px;">
+            <div id="content">
+                <div class="row">
+                    {% if google_map_code %}
+                        <div class="col-md-12 contact-map outer-bottom-vs">
+                            {{ google_map_code }}
+                        </div>
+                    {% endif %}
+                    <div class="col-md-9 contact-form">
+                        <form action="{{ action }}" method="post" enctype="multipart/form-data">
+                            <div class="col-md-12 contact-title">
+                                <h4>{{ heading_title }}</h4>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="register-form" role="form">
+                                    <div class="form-group">
+                                        <label class="info-title" for="exampleInputName">{{ entry_name }} <span>*</span></label>
+                                        <input type="text" name="name" value="{{ name }}" class="form-control unicase-form-control text-input" id="exampleInputName" >
+                                        {% if error_name %}
+                                            <div class="text-danger">{{ error_name }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="register-form" role="form">
+                                    <div class="form-group">
+                                        <label class="info-title" for="exampleInputEmail1">{{ entry_email }} <span>*</span></label>
+                                        <input type="email" name="email" value="{{ email }}" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
+                                        {% if error_email %}
+                                            <div class="text-danger">{{ error_email }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="register-form" role="form">
+                                    <div class="form-group">
+                                        <label class="info-title" for="exampleInputComments">{{ entry_enquiry }} <span>*</span></label>
+                                        <textarea name="enquiry" class="form-control unicase-form-control" id="exampleInputComments">{{ enquiry }}</textarea>
+                                        {% if error_enquiry %}
+                                            <div class="text-danger">{{ error_enquiry }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="register-form" role="form">
+                                    {{ captcha }}
+                                </div>
+                            </div>
+                            <div class="col-md-12 outer-bottom-small m-t-20">
+                                <input class="btn-upper btn btn-primary checkout-page-button" type="submit" value="{{ button_submit }}"/>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-md-3 contact-info">
+                        <div class="contact-title">
+                            <h4>{{ text_information }}</h4>
+                        </div>
+                        <div class="clearfix address">
+                            <span class="contact-i"><i class="fa fa-map-marker"></i></span>
+                            <span class="contact-span">{{ address }}</span>
+                        </div>
+                        <div class="clearfix phone-no">
+                            <span class="contact-i"><i class="fa fa-mobile"></i></span>
+                            <span class="contact-span">{{ telephone }}</span>
+                        </div>
+                        <div class="clearfix email">
+                            <span class="contact-i"><i class="fa fa-envelope"></i></span>
+                            <span class="contact-span"><a href="mailto:{{ config_email }}">{{ config_email }}</a></span>
+                        </div>
+                    </div>
+                </div>
+                {{ content_top }}
+            </div>
+        </div>
+        <!-- /.row -->
+        {{ content_bottom }}
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /#top-banner-and-menu -->
+{{ column_right }}
+{{ footer }}

@@ -1,0 +1,38 @@
+{% if banners %}
+    {% if position == 'content_top' %}
+    <div class="wide-banners wow fadeInUp outer-bottom-xs">
+        <div class="row">
+            {% for banner in banners %}
+            <div class="col-md-6 col-sm-6">
+                <div class="wide-banner cnt-strip">
+                    <div class="image">
+                        {% if banner.link %}
+                            <a href="{{ banner.link }}"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive"/></a>
+                        {% else %}
+                            <img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" />
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- /.wide-banner -->
+            </div>
+            {% endfor %}
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.wide-banners -->
+    {% elseif position == 'column_right' or position == 'column_left' %}
+        <div class="column-right-banner">
+            {% for banner in banners %}
+                <div class="wide-banner cnt-strip" style="margin-bottom: 10px;">
+                    <div class="image">
+                        {% if banner.link %}
+                            <a href="{{ banner.link }}"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive"/></a>
+                        {% else %}
+                            <img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" />
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endif %}

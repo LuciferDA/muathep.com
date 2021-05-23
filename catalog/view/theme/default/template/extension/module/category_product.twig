@@ -1,0 +1,44 @@
+{% if position == 'column_left' %}
+    <!-- ================================== TOP NAVIGATION ================================== -->
+    <div class="side-menu animate-dropdown outer-bottom-xs hidden-xs">
+        <div class="head"><i class="icon fa fa-align-justify fa-fw"></i> {{ heading_title }}</div>
+        <nav class="yamm megamenu-horizontal">
+            <ul class="nav">
+                {% for category in categories %}
+                    {% if category.children %}
+                        <li class="dropdown menu-item">
+                            <a href="{{ category.href }}" class="dropdown-toggle" data-hover="dropdown">{{ category.name }}</a>
+                            <ul class="dropdown-menu mega-menu">
+                                <li>
+                                    <div class="yamm-content">
+                                        <div class="row">
+                                            {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+                                                <div class="col-xs-12 col-sm-12 col-md-4 col-menu">
+                                                    <ul class="links list-unstyled">
+                                                        {% for child in children %}
+                                                            <li><a href="{{ child.href }}">{{ child.name }}</a></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                                <!-- /.col -->
+                                            {% endfor %}
+                                        </div>
+                                        <!-- /.row -->
+                                    </div>
+                                    <!-- /.yamm-content -->
+                                </li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li class="dropdown menu-item"> <a href="{{ category.href }}" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}</a>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <!-- /.nav -->
+        </nav>
+        <!-- /.megamenu-horizontal -->
+    </div>
+    <!-- /.side-menu -->
+{% elseif position == 'column_right' %}
+
+{% endif %}

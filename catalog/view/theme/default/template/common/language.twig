@@ -1,0 +1,22 @@
+{% if languages|length > 1 %}
+    <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">{{ text_language }} </span><b class="caret"></b></a>
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-language">
+        <ul class="dropdown-menu">
+            {% for language in languages %}
+            <li>
+                <a name="{{ language.code }}" class="language-select" href="#">
+                    <img
+                            src="catalog/language/{{ language.code }}/{{ language.code }}.png"
+                            alt="{{ language.name }}" title="{{ language.name }}"/> {{ language.name }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <input type="hidden" name="code" value=""/>
+        <input type="hidden" name="redirect" value="{{ redirect }}"/>
+        </form>
+    </li>
+
+    
+{% endif %}
+

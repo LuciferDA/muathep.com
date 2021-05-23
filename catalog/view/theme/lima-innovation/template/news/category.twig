@@ -1,0 +1,82 @@
+{{ header }}
+
+<div id="information-information" class="main-container container res">
+  <ul class="breadcrumb">
+  {% for breadcrumb in breadcrumbs %}
+      {% if loop.first %}
+     <li><a href="{{ breadcrumb.href }}"><i class="fa fa-home"></i></a></li>
+      {% else %}
+     <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+     {% endif %}
+  {% endfor %}
+  </ul>
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">
+            <div class="blog-header">
+             <h3>{{ heading_title}}</h3>
+            </div>
+              <div class="blog-category clearfix">
+                 <div class="blog-listitem">
+                        {% if newss %}
+                        
+                        {% for new in newss %}
+                            <div class="blog-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                               <div class="blog-item-inner clearfix">
+                                  <div class="itemBlogImg clearfix">
+                                     <div class="article-image">
+                                        <div>
+                                           <a class="popup-gallery" href="{{new.thumb}}">
+                                           <img src="{{new.thumb}}" alt="{{new.name}}" />
+                                           </a>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class="itemBlogContent clearfix ">
+                                     <div class="blog-content">
+                                        <div class="article-title font-title">
+                                           <h4><a href="{{new.href}}">{{new.name}}</a></h4>
+                                        </div>
+                                        <div class="date"><span>{{new.date_added}}</span></div>
+                                        <p class="article-description">{{new.description}}</p>
+                                        <div class="readmore">  <a class="btn-readmore font-title" href="{{new.href}}"><i class="fa fa-caret-right"></i>Chi Tiết</a>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                        {% endfor %}
+                        <div class="row" style="float:left;">
+                            <div class="box-pagination col-sm-6 text-left">{{ pagination }}</div>
+                            <div class="col-sm-6 text-right">{{ results }}</div>
+                        </div>
+                    {% endif %}
+                    {% if not newss %}
+                        <p>{{ text_empty }}</p>
+                        <div class="buttons">
+                            <div class="pull-right"><a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                    
+                 </div>
+                 <div class="product-filter product-filter-bottom filters-panel clearfix">
+                    <div class="row">
+                       <div class="col-md-12">
+                          <div></div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+        {{ content_bottom }}
+        </div>
+    {{ column_right }}
+    </div>
+</div>
+{{ footer }}

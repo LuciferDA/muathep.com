@@ -1,0 +1,55 @@
+<div class="sidebar-widget outer-bottom-small wow fadeInUp hidden-xs">
+    <h3 class="section-title">{{ heading_title }}</h3>
+    <div class="sidebar-widget-body outer-top-xs">
+        <div class="owl-carousel sidebar-carousel special-offer custom-carousel owl-theme outer-top-xs">
+            {% for products_combo in products_combos %}
+                <div class="item">
+                    <div class="products special-product">
+                        {% for product in products_combo %}
+                            <div class="product">
+                                <div class="product-micro">
+                                    <div class="row product-micro-row">
+                                        <div class="col col-xs-5">
+                                            <div class="product-image">
+                                                <div class="image"><a href="{{ product.href }}"><img
+                                                                src="{{ product.thumb }}" alt="{{ product.name }}"
+                                                                title="{{ product.name }}" class="img-responsive"/></a>
+                                                </div>
+                                                <!-- /.image -->
+
+                                            </div>
+                                            <!-- /.product-image -->
+                                        </div>
+                                        <!-- /.col -->
+                                        <div class="col col-xs-7">
+                                            <div class="product-info">
+                                                <h3 class="name"><a href="{{ product.href }}">{{ product.name }}</a>
+                                                </h3>
+                                                <div class="product-price">
+                                                    {% if product.price %}
+                                                        {% if not product.special %}
+                                                            <span class="price"> {{ product.price }} </span>
+                                                        {% else %}
+                                                            <span class="price">{{ product.special }}</span>
+                                                            <span class="price-before-discount">{{ product.price }}</span>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                                <!-- /.product-price -->
+                                            </div>
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+                                    <!-- /.product-micro-row -->
+                                </div>
+                                <!-- /.product-micro -->
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- /.sidebar-widget-body -->
+</div>
+<!-- /.sidebar-widget -->

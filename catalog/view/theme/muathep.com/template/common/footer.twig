@@ -1,0 +1,745 @@
+                     <footer id="main-footer">
+                        <div class="container">
+                           <div class="footer_new">
+                              <div class="footer-new-left">
+                                 <ul>
+                                    <li>
+                                       <h6>Địa chỉ</h6>
+                                       <a href="#">Đà Nẵng</a>
+                                    </li>
+                                    <li>
+                                       <h6>Điện thoại</h6>
+                                       <a href="#">0912947499</a>
+                                    </li>
+                                    <li>
+                                       <h6>EMAIL</h6>
+                                       <a href="#">support@muathep.com</a>
+                                    </li>
+                                    <!-- <li>
+                                       <h6>CIN NUMBER</h6>
+                                       <a href="#">U52190AP2016PTC103119</a>
+                                    </li> -->
+                                 </ul>
+                              </div>
+                              <div class="footer-new-mid">
+                                 <div class="footer-menu">
+                                    <div class="footer-menu-box">
+                                       <h5>Danh Mục</h5>
+                                       <ul class="f-menu">
+                                          <li><a href="#">Thép Xây Dựng</a></li>
+                                          <li><a href="#">Thép Hình</a></li>
+                                          <li><a href="#">Phôi Thép</a></li>
+                                       </ul>
+                                    </div>
+                                    <div class="footer-menu-box">
+                                       <h5>Follow us on</h5>
+                                       <ul class="fs-menu">
+                                          <li><a href="#" /></a></li>
+                                          <li><a href="#" target="_blank"><img src="catalog/view/theme/muathep.com/images/fs2.png" /></a></li>
+                                          <li><a href="#" target="_blank"><img src="catalog/view/theme/muathep.com/images/fs3.png" /></a></li>
+                                          <li><a href="#" target="_blank"><img src="catalog/view/theme/muathep.com/images/fs4.png" /></a></li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                                 <div class="footer-menu">
+                                    <div class="footer-menu-box">
+                                       <h5>Giới Thiệu</h5>
+                                       <ul  class="f-menu">
+                                          <li><a href="#">Liên Hệ</a></li>
+                                          <li><a href="#">Đối tác</a></li>
+                                       </ul>
+                                    </div>
+                                    <div class="footer-menu-box">
+                                       <h5>Tài khoản</h5>
+                                       <ul  class="f-menu">
+                                          <li><a href="#">Chính sách bảo mật</a></li>
+                                          <li><a href="#">Chính sách thanh toán</a></li>
+                                          <li><a href="#">Tài khoản</a></li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+
+                           </div>
+                        </div>
+                        <div class="copyright">
+                           COPYRIGHT@ 2021 MUATHEP.COM ALL RIGHTS ARE RESERVED.
+                        </div>
+                     </footer>
+                     <!-- <footer id="footer"> 
+                        </footer> -->
+                     <!-- <a id="myBtn" href="#popup1">
+                        <img src="catalog/view/theme/muathep.com/images/mclass.png" alt="Request call back" />
+                     </a> -->
+                  </div>
+                  <script>
+                     jQuery(document).ready(function(){
+                         
+                       setTimeout(function(){jQuery('.messages').fadeOut();}, 5000);
+                       jQuery(window).click(function(){jQuery('.messages').fadeOut();}); 
+                     });
+                  </script>
+                  <script>
+                     jQuery(".menuh").click(function(){
+                       jQuery(".mobile_nav #navigation").slideToggle(); 
+                       jQuery(".mobile_nav #navigation ul").css("display","none");
+                     });
+                     
+                     jQuery("#navigation .sub-toggle ").click(function(){
+                       
+                       jQuery(this).nextAll("ul").slideToggle();
+                     });
+                  </script> 
+                  <script>
+                     jQuery( "#rcall-back" ).submit(function( event ) {
+                        var tel_no = $('#phone').val();
+                         
+                         if(tel_no.length==10&& tel_no.charAt(0)>5){
+                           jQuery(".btn-sumbmit").hide();
+                             jQuery( "#rcall-back" ).submit();
+                         }else{
+                             jQuery("#error").html('Enter valid phone number');
+                           event.preventDefault();  
+                         }
+                       
+                     });
+                         jQuery("#phone").on("keyup", function (e) {
+                           
+                             var keyCode = e.which ? e.which : e.keyCode
+                             var key_num = e.key;
+                             var tel_no = jQuery('#phone').val();
+                             
+                             if (tel_no.length==10 && tel_no.charAt(0)<6) {
+                                 
+                                 tel_no = tel_no.substr(1);
+                            jQuery('#phone').val(tel_no);
+                              jQuery("#error").css("display", "inline");
+                             jQuery("#error").html('Enter valid phone number');
+                             jQuery('#phone').removeClass("validation-passed");
+                             jQuery('#phone').addClass("validation-failed")
+                             return false;
+                         }else{
+                         jQuery('#phone').removeClass("validation-failed");
+                         jQuery('#phone').addClass("validation-passed");
+                         }
+                             
+                         });
+                     jQuery("#phone").on("keypress", function (e) {
+                     
+                          var keyCode = e.which ? e.which : e.keyCode
+                          var key_num = e.key;
+                         var tel_no = jQuery('#phone').val();
+                          
+                       
+                         
+                          if(tel_no.length==0 && (keyCode>=48 && keyCode<=53)){
+                            
+                            jQuery("#error").css("display", keyCode ? "block" : "inline");
+                            jQuery("#error").html('Enter valid phone number');
+                             return false;
+                             
+                         }else if (tel_no.length>0 && tel_no.charAt(0)<6) {
+                            
+                             jQuery("#error").css("display", "inline");
+                             jQuery("#error").html('Enter valid phone number');
+                             jQuery('#phone').addClass("validation-failed")
+                             return false;
+                         }else if(tel_no.length>9  ){
+                           
+                             jQuery("#error").html('Enter valid phone number'); 
+                                  return false;
+                                  
+                        }else{
+                            
+                            
+                              var ret = ((keyCode >= 48 && keyCode <= 57)) || (keyCode == 37 || keyCode == 39 || keyCode == 63272 || keyCode == 8 || keyCode == 45 || keyCode == 189);
+                                     jQuery("#error").css("display", ret ? "none" : "inline");
+                                     return ret;
+                                 
+                         }
+                            });     
+                       
+                      
+                      jQuery(document).on("wheel", "input[type=number]", function (e) {
+                        jQuery(this).blur();
+                     });   
+                              
+                  </script>
+                  <script type="text/javascript">
+                     jQuery(window).load(function(){  
+                     jQuery('.flexslider').flexslider({  
+                     animation: "slide",
+                     start: function(slider){
+                     jQuery('body').removeClass('loading');
+                     }  
+                     });
+                     });
+                  </script>
+                  <script type="application/ld+json">
+                     {
+                     "@context": "http://schema.org",
+                     "@type": "WebSite",
+                     "url": "http://steeloncall.com/",
+                        "potentialAction": {
+                           "@type": "SearchAction",
+                           "target": "https://steeloncall.com/catalogsearch/result/?q={q}",
+                           "query-input": "required name=q"
+                           }
+                     }
+                  </script>
+                  <script>
+                     Validation.addAllThese([
+                     
+                      ['validate-cemail', 'Please make sure your emails match.', function(v) {
+                     var conf = $$('.validate-cemail')[0];
+                     var pass = false;
+                     if ($('email')) {
+                     pass = $('email');
+                     }
+                     var emailElements = $$('.validate-email');
+                     for (var i = 0; i < emailElements.size(); i++) {
+                     var emailElement = emailElements[i];
+                     if (emailElement.up('form').id == conf.up('form').id) {
+                     pass = emailElement;
+                     }
+                     }
+                     if ($$('.validate-admin-email').size()) {
+                     pass = $$('.validate-admin-email')[0];
+                     }
+                     return (pass.value == conf.value);
+                     }],
+                     ]); 
+                  </script>
+
+
+                  <div id="vss_solo_blank" class="vss_solo_blank_class"  style="">
+                     <div id="vss_solo_popup_parent"   >
+                        <div id='vss_solo_popup_close'  >
+                           <!--  <img src="" id="vss_close_pic" /> -->
+                        </div>
+                        <div class="clearfix"></div>
+                        <div id="vss_solo_popup"   >
+                           <!--MAIN PANEL START-->
+                           <div class="vss_solo_panel vss_solo_panel-primary" id="vss_solo" >
+                              <!--MAIN PANEL BODY START-->
+                              <div class="vss_solo_panel-body">
+                                 <div id="vss_solo_login_form" >
+                                    <form id="vss_solo_login"  action="https://steeloncall.com/*/*/" method="post"  novalidate="novalidate" enctype="multipart/form-data">
+                                       <input type="hidden" name="scope" value="default" />
+                                       <input type="hidden" name="scope_id" value="0" />
+                                       <input type="hidden" name="website" value="" />
+                                       <input type="hidden" name="store" value="" />
+                                       <input name="form_key" type="hidden" value="kRNDW6nk1S2D1sTa" />
+                                       <div class
+                                          ="vss_solo_head">
+                                          <h2>Đăng nhập</h2>
+                                       </div>
+                                       <div class="vss_margin">
+                                          <span>
+                                             <!--   <label class="vss_solo_login_label">:</label> --> <input name="vss_solo_login[email]" class="vss_solo_login_input" type="text" placeholder="Email" id="vss_solo_login_email"  />
+                                          </span>
+                                       </div>
+                                       <div class="vss_margin login_pass">
+                                          <span>
+                                             <!--  <label class="vss_solo_login_label">:</label> --> <input name="vss_solo_login[pass]" class="vss_solo_login_input" type="password" placeholder="Mật khẩu" id="vss_solo_login_pass"  />
+                                          </span>
+                                       </div>
+                                       <div class="vss_right"> 
+                                          <span id='vss_solo_login_error_box'></span><br/>
+                                          <span id="vss_loading1" class="vss_loading_pic" style="display:none;"><img src="catalog/view/theme/muathep.com/media/vss_popuploginizer/image/ajax-loader.gif" alt="popup_login-loader"></span>
+                                          <span class="vss_right">
+                                          <button type="button" id="vss_solo_login_submit" class="vss_solo_submit" onclick="vss_login_submit();">
+                                          <span>Login Now</span>
+                                          </button>
+                                          </span>
+                                       </div>
+                                    </form>
+                                    <div class="vss_olinks">
+                                       <a class="vss_cusor"     onclick="vss_show_forgot();" >Quên mật khẩu ?</a>
+                                    </div>
+                                    <div class="vss_olinks" > Tài khoản mới ? 
+                                       <a  class="vss_cusor"  onclick="vss_show_signup();" >
+                                       Tạo mới tài khoản </a> 
+                                    </div>
+                                 </div>
+                                 <!--FORGOT FORM-->
+                                 <div id="vss_solo_forgot_form" style="display:none;">
+                                    <form id="vss_solo_forgot"  method="post">
+                                       <div class="vss_solo_head">
+                                          <h2>Quên mật khẩu ?</h2>
+                                       </div>
+                                       <div class="clearfix"></div>
+                                       <div class="vss_forget">
+                                          <h3>Khôi phục mật khẩu ở đây</h3>
+                                          <p>Vui lòng nhập email chúng tôi sẽ gởi mật khẩu mới vào email của quý khách.</p>
+                                       </div>
+                                       <div class="vss_margin">
+                                          <span>
+                                             <!-- <label class="vss_solo_login_label">:</label> -->
+                                             <input name="vss_solo_forgot[email]" class="vss_solo_login_input" type="text" placeholder="Enter an Email" id="vss_solo_forgot_email"  />
+                                          </span>
+                                       </div>
+                                       <div class="vss_right">
+                                          <span id='vss_solo_forgot_error_box'></span><br/>
+                                          <span id='vss_solo_forgot_msg_box'></span>
+                                          <span id="vss_loading2" class="vss_loading_pic" style="display:none;"><img src="catalog/view/theme/muathep.com/media/vss_popuploginizer/image/ajax-loader.gif"></span>
+                                          <span>
+                                          <button  type="button" id="vss_solo_forgot_submit" class="vss_solo_submit" onclick="vss_forgot_submit();">
+                                          <span>Gởi</span>
+                                          </button>
+                                          </span>
+                                       </div>
+                                       <div class="vss_olinks" >
+                                          <a onclick="vss_show_login();" class="vss_cusor">Quay trở lại Đăng nhập ?</a>
+                                       </div>
+                                    </form>
+                                 </div>
+                                 <!--FORGOT FORM END-->
+                                 <div id="vss_solo_signup_form" style="display:none;">
+                                    <form action="https://steeloncall.com/live" method="post" id="vss_solo_signup" >
+                                       <div class="vss_solo_head">
+                                          <h2>Đăng ký</h2>
+                                       </div>
+                                       <div class="vss_margin">
+                                          <span>
+                                          <input name="vss_solo_signup[email]" class="vss_solo_login_input" type="text" placeholder="Email của bạn" id="vss_solo_signup_email"  />
+                                          </span>
+                                       </div>
+                                       <div class="vss_margin">
+                                          <span>
+                                          <input name="vss_solo_signup[customer_mobile]" class="vss_solo_login_input" type="text" placeholder="Số điện thoại" id="vss_solo_signup_mobile"  />
+                                          </span>
+                                       </div>
+                                       <div class="vss_margin">
+                                          <span>
+                                          <input name="vss_solo_signup[pass]" class="vss_solo_login_input" placeholder="Password" type="password"  id="vss_solo_signup_pass"  />
+                                          <input name="vss_solo_signup[cpass]" placeholder="Mật khẩu" class="vss_solo_login_input" type="password"  id="vss_solo_signup_cpass"  />
+                                          </span>
+                                       </div>
+                                       <div class="vss_margin">
+                                          <span>
+                                             <select name="vss_solo_signup[group_id]" id="group_id" title="Group" class="validate-group required-entry input-text" />
+                                                <option value="1">Tổ chức</option>
+                                                <option value="2">Cá nhân</option>
+                                             </select>
+                                          </span>
+                                       </div>
+                                       <div class="vss_right" >
+                                          <span id='vss_solo_signup_error_box'></span><br/>
+                                          <span id="vss_loading3" class="vss_loading_pic" style="display:none;"><img src="catalog/view/theme/muathep.com/media/vss_popuploginizer/image/ajax-loader.gif"></span>
+                                          <span>
+                                          <button type="button" id="vss_solo_signup_submit" class="vss_solo_submit" onclick="vss_signup_submit();">
+                                          Đăng ký                                            </button>
+                                          </span>
+                                       </div>
+                                       <div class="vss_olinks" >
+                                          <a onclick="vss_show_login();" class="vss_cusor">Quay trở lại đăng nhập</a>
+                                       </div>
+                                    </form>
+                                 </div>
+                              </div>
+                              <!-- modal footer starts here -->                    
+                              <div class="modal_footer">
+                                 <div class="modal_contact">
+                                    <i class="sprite sprite-tele"></i>
+                                    <div class="model_content_right">
+                                       <span>0912947499</span>
+                                       <h6>Sun-Sat 10am-6pm</h6>
+                                    </div>
+                                 </div>
+                                 <div class="modal_support">
+                                    <i class="sprite sprite-support_icon"></i>
+                                    <div class="model_content_right">
+                                       <a href = "mailto: support@muathep.com">support@muathep.com</a>
+                                       <h6>online support</h6>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- modal footer ends here -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <script>
+                     /*jQuery('#vss_solo_login_email').keyup(function(){*/
+                     jQuery("#vss_solo_login_email").on("keyup", function (e) {
+                         var email = jQuery('#vss_solo_login_email').val();
+                         var leng = email.length
+                        // var pattern = '^[0-9]+$';
+                         const re = /^\d*(\.\d+)?$/
+                         var valid_user = email.match(re);
+                          
+                     
+                         if(leng==10 && valid_user !=null){
+                             jQuery('#vss_solo_login_email').attr('maxlength', 10);
+                             
+                             jQuery('.login_otp').show(); 
+                             jQuery('.login_pass').hide();
+                             
+                             jQuery.ajax({
+                                 url: "https://steeloncall.com/popuploginizer/index/ajaxSendOtp/",
+                                 type: "POST",
+                                 data: "phone_number="+email,
+                                 success: function(data) {
+                                      
+                                    
+                                 }
+                                });
+                             
+                         }else{
+                              jQuery('#vss_solo_login_email').attr('maxlength', 100);
+                             jQuery('.login_otp').hide();
+                             jQuery('.login_pass').show();
+                         }
+                     });
+                     
+                     jQuery(document).ready(function() {
+                         jQuery("#vss_solo_blank").height(jQuery('body').height());
+                         jQuery("#vss_solo_blank").width(jQuery('body').width());
+                     
+                     
+                     });
+                     
+                     jQuery(window).resize(function() {
+                         jQuery("#vss_solo_blank").height(jQuery('body').height());
+                         jQuery("#vss_solo_blank").width(jQuery('body').width());
+                     
+                     });
+                     
+                     
+                     jQuery('#vss_solo_popup_close').click(function() {
+                         vss_show_login();
+                         jQuery("#vss_solo_blank").hide();
+                         jQuery('#vss_solo_css').remove();
+                     });
+                     
+                     function vss_show_login() {
+                     
+                         jQuery("#vss_solo_login_form").fadeIn();
+                         jQuery("#vss_solo_forgot_form").css('display', 'none');
+                         jQuery("#vss_solo_signup_form").css('display', 'none');
+                         jQuery("#vss_solo_login_error_box").html('');
+                         jQuery("#vss_solo_login_email").css('box-shadow', 'none');
+                         jQuery("#vss_solo_login_pass").css('box-shadow', 'none');
+                     }
+                     function vss_show_forgot() {
+                     
+                         jQuery("#vss_solo_login_form").css('display', 'none');
+                         jQuery("#vss_solo_forgot_form").fadeIn();
+                         jQuery("#vss_solo_signup_form").css('display', 'none');
+                         jQuery("#vss_solo_forgot_error_box").html('');
+                         jQuery("#vss_solo_forgot_msg_box").html('');
+                         jQuery("#vss_solo_forgot_email").css('box-shadow', 'none');
+                     
+                     }
+                     function vss_show_signup() {
+                         clearSignUpError();
+                         jQuery("#vss_solo_login_form").css('display', 'none');
+                         jQuery("#vss_solo_forgot_form").css('display', 'none');
+                         jQuery("#vss_solo_signup_form").fadeIn(1000);
+                         jQuery("#vss_solo_signup_error_box").html('');
+                         jQuery("#vss_solo_signup_email").css('box-shadow', 'none');
+                     
+                     }
+                     
+                     function vss_login_submit() {
+                     
+                         var login_email = jQuery("#vss_solo_login_email").val();
+                         var login_pass = jQuery("#vss_solo_login_pass").val();
+                         var login_otp = jQuery("#vss_solo_login_otp").val();
+                         
+                         if(login_otp){
+                             login_pass =login_otp;
+                         }
+                         
+                         var error = 0; 
+                        
+                         if (login_email.length === 0 && login_pass.length === 0 ) {
+                             error++;
+                             jQuery("#vss_solo_login_error_box").html('Credentials Required!!');
+                             jQuery("#vss_solo_login_email").css('box-shadow', '1px 1px 0 1px #FF0000');
+                             jQuery("#vss_solo_login_pass").css('box-shadow', '1px 1px 0 1px #FF0000');
+                     
+                         } else
+                         if (login_email.length === 0 && login_pass.length > 0 ) {
+                             error++;
+                             jQuery("#vss_solo_login_error_box").html('Email Required!!');
+                             jQuery("#vss_solo_login_email").css('box-shadow', '1px 1px 0 1px #FF0000');
+                             jQuery("#vss_solo_login_pass").css('box-shadow', 'none');
+                     
+                         }
+                         else if (login_pass.length === 0 && login_pass.length > 0 ) { 
+                             error++;
+                             jQuery("#vss_solo_login_error_box").html('Password Required!!');
+                             jQuery("#vss_solo_login_pass").css('box-shadow', '1px 1px 0 1px #FF0000');
+                             jQuery("#vss_solo_login_email").css('box-shadow', 'none');
+                     
+                         }
+                         else {
+                             jQuery("#vss_solo_login_error_box").html('');
+                             jQuery("#vss_solo_login_email").css('box-shadow', 'none');
+                             jQuery("#vss_solo_login_pass").css('box-shadow', 'none');
+                     
+                         }
+                     
+                     
+                     
+                         if (error === 0) {
+                             jQuery("#vss_loading1").show();
+                             jQuery("#vss_solo_login_error_box").html(' ');
+                             jQuery("#vss_solo_login_email").css('box-shadow', 'none');
+                             jQuery("#vss_solo_login_pass").css('box-shadow', 'none');
+                     
+                             var postData = jQuery('#vss_solo_login').serialize();
+                     
+                             jQuery.ajax({
+                                 type: 'post',
+                                 url: 'https://steeloncall.com/popuploginizer/index/defaultLogin/',
+                                 data: postData,
+                                 dataType: 'html',
+                                 success: function(reply) {
+                                   //alert(reply);
+                                     jQuery("#vss_loading1").hide(); 
+                     //                        console.log(reply.length);
+                     
+                                     var response = jQuery.parseJSON(reply); 
+                                  // console.log(response);
+                                     if (response.id === 1) {
+                                         jQuery("#vss_solo_login_error_box").html(response.msg + '<br>');
+                                     }
+                                     if (response.id === 2) {
+                                                 window.location = "customer/account/index.html";
+                     
+                                     }
+                                     if (response.id === 3) {
+                     
+                                                 window.location = "customer/account/index.html";
+                                         }
+                     
+                     
+                                     if (response.id === 4) {
+                                         jQuery("#vss_solo_login_error_box").html(response.msg + '<br>');
+                                     }
+                                     if (response.id === 5) {
+                                         jQuery("#vss_solo_login_error_box").html(response.msg + '<br>');
+                                     }
+                                     if (response.id === 6) {
+                                         jQuery("#vss_solo_login_error_box").html('Login and Password required!!' + '<br>');
+                                     }
+                     
+                                 }
+                             });
+                     
+                     
+                         }
+                         else {
+                             return false;
+                         }
+                     
+                     }
+                     
+                     function vss_forgot_submit() {
+                     
+                         var forgot_email = jQuery("#vss_solo_forgot_email").val();
+                         var error = 0;
+                     
+                         if (forgot_email.length === 0) {
+                             error++;
+                             jQuery("#vss_solo_forgot_error_box").html('Email Required!!');
+                             jQuery("#vss_solo_forgot_email").css('box-shadow', '1px 1px 0 1px #FF0000');
+                     
+                     
+                         }
+                     
+                         if (error === 0) {
+                             jQuery("#vss_loading2").show();
+                             jQuery("#vss_solo_forgot_error_box").html(' ');
+                             jQuery("#vss_solo_forgot_email").css('box-shadow', 'none');
+                             var postData = jQuery('#vss_solo_forgot').serialize();
+                     
+                             jQuery.ajax({
+                                 type: 'post',
+                                 url: 'https://steeloncall.com/popuploginizer/index/defaultForgot/',
+                                 data: postData,
+                                 dataType: 'html',
+                                 success: function(reply) {
+                                     jQuery("#vss_loading2").hide();
+                                     var response = jQuery.parseJSON(reply);
+                                     if (response.id === 1) {
+                                         jQuery("#vss_solo_forgot_error_box").html(response.msg + '<br>');
+                                     }
+                                     else
+                                     if (response.id === 2) {
+                                         jQuery("#vss_solo_forgot_error_box").html(response.msg + '<br>');
+                                     }
+                                     else
+                                     if (response.id === 3) {
+                                         jQuery("#vss_solo_forgot_error_box").html('');
+                                         jQuery("#vss_solo_forgot_msg_box").html(response.msg + '<br>');
+                                         jQuery("#vss_solo_forgot_email").val('');
+                                     }
+                                     else
+                                     if (response.id === 4) {
+                                         jQuery("#vss_solo_forgot_msg_box").html('');
+                                         jQuery("#vss_solo_forgot_error_box").html(response.msg + '<br>');
+                     
+                                     }
+                     
+                                 }
+                             });
+                     
+                     
+                         }
+                         else {
+                             return false;
+                         }
+                     
+                     }
+                     
+                     function clearSignUpError() {
+                         jQuery("#vss_solo_signup_email").css('box-shadow', 'none');           
+                         jQuery("#vss_solo_signup_pass").css('box-shadow', 'none');
+                         jQuery("#vss_solo_signup_cpass").css('box-shadow', 'none');
+                     
+                         jQuery("#vss_solo_forgot_error_box").html(' ');
+                     }
+                     
+                     function vss_signup_submit() {
+                     
+                         var signup_email = jQuery("#vss_solo_signup_email").val();            
+                         var signup_pass = jQuery("#vss_solo_signup_pass").val();
+                         var signup_cpass = jQuery("#vss_solo_signup_cpass").val();
+                     
+                         var error = 0;
+                         var error1 = 0;
+                         var error2 = 0;
+                     
+                         if (signup_email.length === 0) {
+                             error++;
+                             jQuery("#vss_solo_signup_email").css('box-shadow', '1px 1px 0 1px #FF0000');
+                     
+                         }
+                         else {
+                     
+                             jQuery("#vss_solo_signup_email").css('box-shadow', 'none');
+                     
+                         }
+                     
+                         
+                        
+                         if (signup_pass.length === 0) {
+                             error++;
+                             jQuery("#vss_solo_signup_pass").css('box-shadow', '1px 1px 0 1px #FF0000');
+                     
+                         }
+                         else if (signup_pass.length < 6) {
+                             error2++;
+                             jQuery("#vss_solo_signup_pass").css('box-shadow', '1px 1px 0 1px #FF0000');
+                     
+                         }
+                         else {
+                             jQuery("#vss_solo_signup_pass").css('box-shadow', 'none');
+                         }
+                         if (signup_cpass.length === 0) {
+                             error++;
+                             jQuery("#vss_solo_signup_cpass").css('box-shadow', '1px 1px 0 1px #FF0000');
+                     
+                         }
+                         else {
+                             jQuery("#vss_solo_signup_cpass").css('box-shadow', 'none');
+                     
+                         }
+                     
+                         if ((signup_pass.length > 0 && signup_email.length > 0)) {
+                     
+                             if (signup_pass !== signup_cpass) {
+                                 jQuery("#vss_solo_signup_cpass").css('box-shadow', '1px 1px 0 1px #FF0000');
+                                 error1++;
+                             }
+                     
+                         }
+                     
+                         if (error) {
+                             jQuery("#vss_solo_signup_error_box").html("Provide required information!!");
+                         }
+                         else if (error2) {
+                             jQuery("#vss_solo_signup_error_box").html("Password must have 6 or more characters.");
+                         }
+                         else if (error1) {
+                             jQuery("#vss_solo_signup_error_box").html("Confirm Password mismatch!!");
+                         }
+                     
+                         if (error === 0 && error1 === 0 && error2 === 0) {
+                             jQuery("#vss_loading3").show();
+                             jQuery("#vss_solo_forgot_error_box").html(' ');
+                             jQuery("#vss_solo_forgot_email").css('box-shadow', 'none');
+                             var postData = jQuery('#vss_solo_signup').serialize();
+                     
+                             jQuery.ajax({
+                                 type: 'post',
+                                 url: 'https://steeloncall.com/popuploginizer/index/defaultSignUp/',
+                                 data: postData,
+                                 dataType: 'html',
+                                 success: function(reply) {
+                                     jQuery("#vss_loading3").hide(); 
+                     
+                                     var response = jQuery.parseJSON(reply);
+                                     if (response.id === 1) {
+                                         location.reload();
+                                     } else
+                                     if (response.id === 6) {
+                                         jQuery("#vss_solo_signup_mobile").css('box-shadow', '1px 1px 0 1px #FF0000');
+                                         jQuery("#vss_solo_signup_error_box").html(response.msg + '<br>');
+                                     }
+                                     else
+                                     if (response.id === 2) {
+                                         jQuery("#vss_solo_signup_email").css('box-shadow', '1px 1px 0 1px #FF0000');
+                                         jQuery("#vss_solo_signup_error_box").html(response.msg + '<br>');
+                                     }
+                                     else
+                                     if (response.id === 4) {
+                                         jQuery("#vss_solo_signup_error_box").html(response.msg + '<br>');
+                                         jQuery("#vss_solo_signup_email").css('box-shadow', 'none');
+                     
+                                     }
+                                     else if (response.id === 5) {
+                                         jQuery("#vss_solo_signup_error_box").html(response.msg + '<br>');
+                                     } else if (response.id === 31) {
+                                         jQuery("#vss_solo_signup_error_box").html(response.msg + '<br>');
+                                     } else if (response.id === 3) {
+                                         location.reload();
+                                     }
+                     
+                     
+                                 }
+                             });
+                     
+                     
+                         } else {
+                             return false;
+                         }
+                     
+                     }
+                     
+                  </script>
+                  <style>
+                     /*    #vss_solo_blank{
+                     display:none; position:fixed;top:0px;left: 0px; width:100%;height: 100%;z-index: 1000; 
+                     }
+                     #vss_solo_popup_parent{
+                     width: 400px;height: 50%;position: relative; top:150px; z-index: 1000000; margin: auto; opacity: 1 !important;
+                     }
+                     #vss_solo_popup_close{
+                     cursor: pointer; position: relative;top:10px;width: 35px;left:97%; 
+                     }
+                     #vss_close_pic{
+                     width: 40px; height: 40px;
+                     }
+                     #vss_solo{
+                     width:100%;
+                     }*/
+                  </style>
+                  </div>
+               </body>
+               <!-- Mirrored from steeloncall.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 May 2021 02:41:30 GMT -->
+            </html>

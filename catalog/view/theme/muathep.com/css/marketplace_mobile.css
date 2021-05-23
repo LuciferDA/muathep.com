@@ -1,0 +1,165 @@
+/*.marketplace-seller-panel #seller-panel #stockimportexport .browse_stock_import{margin-bottom:10px;}
+.marketplace-seller-panel #seller-panel #stockimportexport .browse_stock_import + p button.po{margin-left:201px;}
+.marketplace-seller-panel #seller-panel .bulk-simple-upload .field, .marketplace-seller-panel #seller-panel .bulk-configure-upload .field{margin-bottom:10px!important;}
+
+
+.seller-map .gm-style .directions-card-medium-large{width:240px!important;height:50px!important;}
+.seller-map .gm-style .directions-address{font:normal 11px Arial, Helvetica, sans-serif!important;}
+.contentBox .main .col-main > .messages{margin-bottom:35px;}
+.menu-trigger{font:13px "Century Gothic";padding:10px;background:#535b75;display:none;text-align:right;color:#fff;}
+.seller-cont .menu-trigger2{font:bold 13px "Century Gothic";padding:10px;background:rgb(7,21,83);display:none;text-align:right;color:#fff;cursor:pointer;}
+@media only screen and (max-width:1279px){
+
+#header .sellerHright .Hnav li a{font:bold 11px "Century Gothic"; text-transform:capitalize}
+.sellerNave a{font:bold 12px "Century Gothic";}
+.seller_livetable{overflow-x:scroll;}
+}
+@media only screen and (max-width:1279px){
+.marketplace-seller-panel #seller-panel #add_new_product_form .sub-prod-rows .cat-product-list{ margin:0 auto 15px;  }}
+@media only screen and (max-width:1024px){}
+@media only screen and (max-width:980px){.jus{background-size:cover;padding:20px;}
+.marketplace-seller-panel #seller-panel #pending-product-table thead th, .marketplace-seller-panel #seller-panel #pending-product-table tbody td{ text-transform:capitalize;  font-size:12px!important; padding:8px 10px!important}
+.marketplace-seller-panel #seller-panel .page-title{ margin-bottom:16px!important}
+}
+@media only screen and (max-width:979px){#seller_details .block.block-account{float:none!important;width:100%!important;}
+#seller_details .block.block-account .block-content .account_submenu{overflow:hidden;}
+#seller_details .block.block-account .block-content .account_submenu li{float:left;}
+.marketplace-seller-panel #seller-panel .seller_profile{float:none!important;width:100%!important;margin:0!important;}
+#header .sellerHright .Htop{}
+#header .sellerHright .Htop span.wts{margin-right:35px;float:none;margin-left:0;}
+#header .sellerHright{}
+#header .sellerHright .Hnav{clear:both;display:block;margin-bottom:25px;}
+#header .sellerHright .Hnav ul{float:none;clear:both;display:block;overflow:hidden;}
+
+.marketplace-seller-panel #seller-panel .seller_profile{margin-bottom:25px!important;}
+.seller-bodycon .seller-account #orderlist{float:none!important;width:100%!important;margin-left:0!important;}
+.seller-cont .menu-trigger2{display:block; }
+.seller-cont .menu-trigger2:before{ display:block; width:25px; height:25px; content:''; visibility:visible; float:right; margin-left:15px;  background:rgba(0, 0, 0, 0) url("../../images/icons.png") no-repeat scroll -282px -164px}
+.seller-cont{position:relative;}
+.seller-cont .sellerNave{position:absolute;top:37px;right:15px;z-index:9999;display:none;}
+.sellerNave{background:#fff;position:relative;padding:0;}
+.sellerNave .container-cartPage{padding:20px 0 20px 20px;background:rgb(245,247,250); }
+.sellerNave .container-cartPage ul.sRight{float:none;}
+.sellerNave .container-cartPage ul.sRight li,.sellerNave .container-cartPage a{float:none;border:none;}
+.sellerNave .container-cartPage ul.sRight li{padding:10px 0 5px; border-bottom:1px solid rgb(27,86,159); }
+.marketplace-seller-panel #seller-panel .seller_profile .seller-pad{ padding:0}
+}
+
+@media only screen and (max-width:800px){.seller-bodycon .sformLeft{margin:0 5%;width:90%;}
+.sellerForm input[type="text"], .sellerForm input[type="password"], .sellerForm input[type="email"]{max-width:inherit;}
+.form-list p.note,.sellerForm #reg_terms,.sellerForm p.required{text-align:left;}
+.product_configurable_search{overflow:hidden;}
+.marketplace-seller-panel #seller-panel .seller_profile .product_configurable_search span.field_live_con{width:100%;}
+.marketplace-seller-panel #seller-panel .seller_profile .product_configurable_search span.field_live_con label{display:block;float:none;}
+.marketplace-seller-panel #seller-panel .seller_profile .product_configurable_search span.field_live_con input[type="text"]{padding:2px 2%;width:95%;margin-bottom:0;}
+.marketplace-seller-panel #seller-panel .seller_profile #product_simple_seach span.field_live_con prices{float:none;width:100%;}
+.sformLeft{ max-width:none}
+}
+
+@media only screen and (max-width:767px){
+	.dbord{ margin-top:25px}
+	#header .sellerHright .Htop{ text-align:right}
+	.hright .wts{ color:#fbe5af}
+	.Hnav li a{ padding:6px 8.5px}
+	.wts strong{ color:#fff}
+	#header .sellerHright .Hnav { background:#fff}
+	#live #dummyModal1 .modal-dialog .modal-header h2{ font-size:16px!important}
+	#seller_details .block.block-account .block-content .account_submenu li{float:none;}
+#updateprofile .col2-set{margin:0 5%;width:90%;}
+#updateprofile .col2-set .col-1.new-users,#updateprofile .col2-set .col-2.registered-users{width:100%!important;float:none!important;}
+.marketplace-seller-panel #seller-panel .field{float:none!important;width:100%!important;}
+.marketplace-seller-panel #seller-panel .input-box{width:100%!important;}
+.marketplace-seller-panel #seller-panel .seller_shipping li div.field{overflow:hidden;}
+.marketplace-seller-panel #seller-panel .seller-pad label.required{width:100%;margin-bottom:15px;}
+
+body.marketplace-seller-panel #new_simple .product-fields label{float:none!important;}
+body.marketplace-seller-panel #seller-panel #add_new_product_form #new_simple input, body.marketplace-seller-panel #seller-panel #add_new_product_form #new_simple textarea, body.marketplace-seller-panel #seller-panel #add_new_product_form #main-images input{width:90%!important;padding:2px 2%;}
+body.marketplace-seller-panel #seller-panel #add_new_product_form #new_simple textarea{width:94%!important;max-width:inherit;}
+.seller-pad #add_new_product_form{width:100%!important;}
+.marketplace-seller-panel #seller-panel #add_new_product_form select{width:94%!important;}
+.element_space12 .cs{margin-left:0!important;}
+.marketplace-seller-panel #seller-panel .element_space12 p{margin-left:0!important;;}
+button.po{margin-left:0!important;}
+.seller-send-sms button.po{margin-left:20px!important;}
+.add-more-images button#more-images,.add-more-images p,#addoptionbutton{margin-left:0!important;}
+#addoptionbutton{margin-top:5px;}
+.marketplace-seller-panel #seller-panel #stockimportexport .seller_stock_import{width:94%!important;float:none!important;margin-bottom:15px;}
+.marketplace-seller-panel #seller-panel #stockimportexport .seller_stock_export{float:none!important;width:94%!important;}
+.marketplace-seller-panel #seller-panel .bulk-simple-upload #csv_upload, .marketplace-seller-panel #seller-panel .bulk-simple-upload .download-sample-csv-category, .marketplace-seller-panel #seller-panel .bulk-configure-upload #csv_upload, .marketplace-seller-panel #seller-panel .bulk-configure-upload .download-sample-csv-category{float:none!important;width:100%!important;overflow:hidden!important;margin-bottom:20px!important;}
+.marketplace-seller-panel #seller-panel #updateprofile select[name="country"]{width:100%!important;max-width:none}
+.marketplace-seller-panel #seller-panel #updateprofile li.field .browse,
+.marketplace-seller-panel #seller-panel #updateprofile li.field .sfi-wrapper{width:100%!important;display:block;margin-bottom:25px}
+.marketplace-seller-panel #seller-panel #updateprofile li.field textarea#comments{width:100%!important;display:block;margin-bottom:25px;max-width:none}
+
+.marketplace-seller-panel #seller-panel #edit button.po{float:left;}
+.marketplace-seller-panel #seller-panel #edit .required-fields{text-align:left;}
+body.marketplace-seller-panel.marketplace-seller-editproduct #seller-panel #edit_product_form .editproduct .seller_edit_con select{width:100%;}
+
+.marketplace-seller-panel.mpaddproductcatalog-seller-catalog #seller-panel #add_new_product_form, .marketplace-seller-panel #seller-panel .input-box{max-width:100%!important; width:100%!important}
+.marketplace-seller-panel #seller-panel #add_new_product_form .cat-product-list{ max-width:320px}
+.marketplace-seller-panel #seller-panel #add_new_product_form .cat-product-list input.input-text.validate-number, .marketplace-seller-panel #seller-panel #add_new_product_form .cat-product-list input[type="text"]{ width:85%; max-width:85%}
+.marketplace-seller-panel #seller-panel #add_new_product_form .cat-product-list span{ max-width:46%; margin:0 1%}
+.marketplace-seller-panel.mpaddproductcatalog-seller-catalog #seller-panel .seller-pad #add_new_product_form  label.required{margin-bottom:0px;}
+
+.marketplace-seller-panel #seller-panel form#change_pwd{ padding:65px 30px}
+.marketplace-seller-panel #seller-panel .seller_profile .seller-pad{ padding:0}
+.marketplace-seller-panel #seller-panel form.Products_01 .fieldset.add-catalog-left{ margin:0!important}
+}
+@media only screen and (max-width:640px){
+	.seller-menu-1 .menu-trigger{ display:block}
+	.jus h4{font:normal 20px "Century Gothic";}
+.jus span{font:normal 15px "Century Gothic";}
+#header .sellerHright .Hnav{margin-bottom:0;}
+#header .sellerHright .Hnav ul li{padding:5px 10px;float:none;}
+#header .sellerHright .Hnav ul li a{ font-weight:bold}
+#header .sellerHright .Htop span.wts{margin-right:28px;}
+#custom-update-btn{display:block;padding:15px 0 0 0px;clear:both;}
+#custom-update-btn button{display:block;padding:0;float:none;}
+.marketplace-seller-panel #seller-panel .order-list-table, .marketplace-seller-panel #seller-panel .invoice-list-table, .marketplace-seller-panel #seller-panel .manifest-archive-table{overflow:scroll;}
+.seller-pad{overflow-x:scroll;}
+.marketplace-seller-panel #seller-panel .sellerSection .seller-data-table{min-width:400px;}
+.marketplace-seller-panel #seller-panel .seller_shipping_item .data-table.seller_shipping_table{ min-width:640px;}
+
+#header .sellerHright .Hnav{display:none;position:absolute;top:37px;left:0;z-index:9999;}
+#header .sellerHright .Hnav ul li{ border-bottom:none}
+#header .sellerHright .Hnav ul li:hover a{ background:none}
+#header .sellerHright .Hnav ul li:last-child{border-bottom:1px solid #fff;}
+#header .sellerHright .Hnav ul li a{color:#fff;}
+
+.nav-expanded{display:block;}
+.marketplace-seller-panel #header{padding-bottom:0;}
+#seller_shipping_weight,#seller_shipping_item{overflow:scroll;}
+#header .sellerHright .Htop span.wts{width:225px;display:inline-block;text-align:left;padding-bottom:12px;float:left;clear:left}
+.logout{margin-left:0}
+#updateprofile .col2-set .col-2{padding:0!important}
+.marketplace-seller-panel #seller-panel .seller_log .new-users ul.form-list.pwd-change li button.po{ font-size:15px; font-weight:700; padding:5px 10px}
+#live ul.seller_02.live-cat-list > .something{  padding: 20px 7.6%;
+    width: 100%;}
+	.marketplace-seller-panel #seller-panel #discount-popup input[type="text"]{ margin-left:2px}
+	.marketplace-seller-panel #seller-panel .button#save_profile{ font-size:12px!important; padding:7px 5px}
+}
+@media only screen and (max-width:480px){
+.sfi-js .sfi-wrapper{width:265px!important;}
+.sfi-js .sfi-wrapper .sfi-filename{width:146px;}
+.sellerForm{padding-bottom:20px;}
+.sellerForm button{padding:5px;}
+#header .sellerHright .Htop span.wts{display:block;margin-left:22px;text-align:left;}
+
+.sRight li{display:block;padding-left:0;}
+.marketplace-seller-panel #seller-panel .seller-pad input.radioButton + label{margin-bottom:15px;}
+.marketplace-seller-panel #filter_seller_products select{font-size:11px!important;width:200px!important;}
+.marketplace-seller-panel #seller-panel .seller_profile .field_live_con.prices input{width:60px!important;}
+body.marketplace-seller-panel #seller-panel #add_new_product_form #new_simple textarea{width:96%!important;}
+.marketplace-seller-panel #seller-panel #add_new_product_form select{width:96%!important;}
+#form-table-for-free{overflow:scroll;}
+.marketplace-seller-panel table.add-shipping-cost-table{width:480px!important;}
+}
+@media only screen and (max-width:400px){.loginForm input[type="text"]{margin-bottom:10px;}
+.sfi-wrapper.sfi-container{width:235px!important;margin-bottom:10px!important;}
+.sfi-js .sfi-wrapper .sfi-filename{width:120px!important;}
+.marketplace-seller-panel #seller-panel #add_new_product_form input[type="text"], .marketplace-seller-panel #seller-panel #add_new_product_form input[type="file"], .marketplace-seller-panel #seller-panel #add_new_product_form input[type="email"], .marketplace-seller-panel #seller-panel #add_new_product_form input[type="password"], .marketplace-seller-panel #seller-panel .add-new-product-form #add_more_images input, .marketplace-seller-panel #seller-panel .add-new-product-form #super-attribute-fields ul li input{width:190px!important;}
+.marketplace-seller-panel #seller-panel #add_new_product_form select{width:254px!important;}
+}
+@media only screen and (max-width:360px){body.marketplace-seller-panel #seller-panel #add_new_product_form #new_simple textarea{width:100%!important;}
+.marketplace-seller-panel #seller-panel #add_new_product_form select{width:100%!important;}
+}*/

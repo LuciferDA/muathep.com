@@ -1,0 +1,43 @@
+<div class="main-slider">
+   <div id="spinner"></div>
+   {% if banners %} 
+   <div class="swiper-viewport">
+      <div id="slideshow0" class="swiper-container" style="opacity: 1;">
+         <div class="swiper-wrapper">
+          {% for banner in banners %}
+            
+            <div class="swiper-slide text-center"><a href="{{banner.href}}"><img src="{{banner.image}}" alt="{{banner.title}}" class="img-responsive" /></a></div>
+          {% endfor %}
+         </div>
+      </div>
+      <div class="swiper-pagination slideshow0"></div>
+      <div class="swiper-pager">
+         <div class="swiper-button-next"></div>
+         <div class="swiper-button-prev"></div>
+      </div>
+   </div>
+   {% endif %}
+
+</div>
+
+<script>
+   $('#slideshow0').swiper({
+    mode: 'horizontal',
+    slidesPerView: 1,
+    pagination: '.slideshow0',
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+       prevButton: '.swiper-button-prev',
+       spaceBetween: 0,
+       autoplay: 2500,
+       autoplayDisableOnInteraction: true,
+    loop: true,
+     effect:'fade'
+   });
+</script>
+<script>
+   // Can also be used with $(document).ready()
+   $(window).load(function() {    
+     $("#spinner").fadeOut("slow");
+   });  
+</script> 

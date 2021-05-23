@@ -1,0 +1,19 @@
+
+<div class="clear"></div>
+<section class="banner_bottom clearfix">
+<div class="container" id="banner{{ module }}">
+   <div class="bm_left">
+      <ul>
+      	{% if banners %}
+			{% for banner in banners %}	
+         <li>
+            <span><img class="ibanner" src="{{banner.image}}"></span>
+            <p>{{banner.title}}</p>
+         </li>
+        {% endfor %}
+	{% endif %}
+
+      </ul>
+   </div>
+</div>
+</section>

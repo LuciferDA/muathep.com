@@ -1,0 +1,151 @@
+<!--  FOOTER  -->
+<footer id="footer" class="footer color-bg">
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="module-heading">
+                        <h4 class="module-title">{{ text_contact }}</h4>
+                    </div>
+                    <!-- /.module-heading -->
+
+                    <div class="module-body">
+                        <ul class="toggle-footer" style="">
+                            <li class="media">
+                                <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i> </span> </div>
+                                <div class="media-body">
+                                    <p>{{ address }}</p>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-mobile fa-stack-1x fa-inverse"></i> </span> </div>
+                                <div class="media-body">
+                                    <p>{{ telephone }}</p>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-envelope fa-stack-1x fa-inverse"></i> </span> </div>
+                                <div class="media-body"> <span><a href="mailto:{{ email }}">{{ email }}</a></span> </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.module-body -->
+                </div>
+                <!-- /.col -->
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="module-heading">
+                        <h4 class="module-title">{{ text_customer }}</h4>
+                    </div>
+                    <!-- /.module-heading -->
+
+                    <div class="module-body">
+                        <ul class='list-unstyled'>
+                            <li><a href="{{ account }}">{{ text_account }}</a></li>
+                            <li><a href="{{ order }}">{{ text_order }}</a></li>
+                            <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
+                            <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.module-body -->
+                </div>
+                <!-- /.col -->
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="module-heading">
+                        <h4 class="module-title">{{ text_information }}</h4>
+                    </div>
+                    <!-- /.module-heading -->
+
+                    <div class="module-body">
+                        <ul class='list-unstyled'>
+                            {% if informations %}
+                                {% for information in informations %}
+                                    <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+                                {% endfor %}
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <!-- /.module-body -->
+                </div>
+                <!-- /.col -->
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="module-heading">
+                        <h4 class="module-title">{{ text_why_choose }}</h4>
+                    </div>
+                    <!-- /.module-heading -->
+
+                    <div class="module-body">
+                        <ul class='list-unstyled'>
+                            <li><a href="{{ contact }}">{{ text_contact }}</a></li>
+                            <li><a href="{{ return }}">{{ text_return }}</a></li>
+                            <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+                            <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.module-body -->
+                </div>
+            </div>
+            <hr style="border-top: 1px solid #272727;">
+            <div style="color: #505050;">{{ powered }}</div>
+        </div>
+    </div>
+    <div class="copyright-bar">
+        <div class="container">
+            <div class="col-xs-12 col-sm-6 no-padding social">
+                <ul class="link">
+                    {% if social_network %}
+                        {% if social_network.facebook %}
+                            <li class="fb pull-left"><a target="_blank" rel="nofollow" href="{{ social_network.facebook }}" title="Facebook"></a></li>
+                        {% endif %}
+                        {% if social_network.twitter %}
+                            <li class="tw pull-left"><a target="_blank" rel="nofollow" href="{{ social_network.twitter }}" title="Twitter"></a></li>
+                        {% endif %}
+                        {% if social_network.google_plus %}
+                            <li class="googleplus pull-left"><a target="_blank" rel="nofollow" href="{{ social_network.google_plus }}" title="GooglePlus"></a></li>
+                        {% endif %}
+                        {% if social_network.pinterest %}
+                            <li class="pintrest pull-left"><a target="_blank" rel="nofollow" href="{{ social_network.pinterest }}" title="Pinterest"></a></li>
+                        {% endif %}
+                        {% if social_network.linkedin %}
+                            <li class="linkedin pull-left"><a target="_blank" rel="nofollow" href="{{ social_network.linkedin }}" title="Linkedin"></a></li>
+                        {% endif %}
+                        {% if social_network.youtube %}
+                            <li class="youtube pull-left"><a target="_blank" rel="nofollow" href="{{ social_network.youtube }}" title="Youtube"></a></li>
+                        {% endif %}
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6 no-padding">
+                <div class="clearfix payment-methods">
+                    <ul>
+                        <li><img src="catalog/view/theme/default/assets/images/payments/1.png" alt=""></li>
+                        <li><img src="catalog/view/theme/default/assets/images/payments/2.png" alt=""></li>
+                        <li><img src="catalog/view/theme/default/assets/images/payments/3.png" alt=""></li>
+                        <li><img src="catalog/view/theme/default/assets/images/payments/4.png" alt=""></li>
+                        <li><img src="catalog/view/theme/default/assets/images/payments/5.png" alt=""></li>
+                    </ul>
+                </div>
+                <!-- /.payment-methods -->
+            </div>
+        </div>
+    </div>
+</footer>
+{#<script src="catalog/view/theme/default/assets/js/jquery-1.11.1.min.js"></script>#}
+<script src="catalog/view/theme/default/assets/js/bootstrap.min.js"></script>
+<script src="catalog/view/theme/default/assets/js/bootstrap-hover-dropdown.min.js"></script>
+<script src="catalog/view/theme/default/assets/js/owl.carousel.min.js"></script>
+<script src="catalog/view/theme/default/assets/js/echo.min.js"></script>
+<script src="catalog/view/theme/default/assets/js/jquery.easing-1.3.min.js"></script>
+<script src="catalog/view/theme/default/assets/js/bootstrap-slider.min.js"></script>
+<script src="catalog/view/theme/default/assets/js/jquery.rateit.min.js"></script>
+<script src="catalog/view/theme/default/assets/js/lightbox.min.js"></script>
+<script src="catalog/view/theme/default/assets/js/bootstrap-select.min.js"></script>
+<script src="catalog/view/theme/default/assets/js/wow.min.js"></script>
+<script src="catalog/view/theme/default/assets/js/scripts.js"></script>
+{% for script in scripts %}
+    <script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+</body>
+</html>

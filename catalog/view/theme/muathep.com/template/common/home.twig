@@ -1,0 +1,781 @@
+{{header}}
+                     {{content_top}}
+
+                     <script>
+                        jQuery(document).ready(function(){  
+                        jQuery(".menu-trigger").click(function(){       
+                        jQuery(".web-top-nav").css('display','none');
+                        jQuery(".web-nav").slideToggle(400,function(){          
+                          jQuery(this).toggleClass("nav-expanded").css('display', ' ');          
+                        });      
+                        });   
+                        });
+                        
+                        jQuery(document).ready(function(){  
+                        jQuery(".menu-trigger4").click(function(){
+                        jQuery(".Hnav").css('display','none');    
+                        jQuery(".web-top-nav").slideToggle(400,function(){         
+                          jQuery(this).toggleClass("nav-expanded").css('display', ' ');          
+                        });      
+                        });   
+                        });
+                        
+                        jQuery(document).ready(function(){  
+                        jQuery(".fin").click(function(){
+                        jQuery(this).css('display','none');
+                        jQuery(this).prev(".closed").css('display','block');
+                        jQuery(".closed").click(function(){
+                           jQuery(this).fadeOut();
+                           jQuery(this).next(".fin").css('display','inline-block');
+                           jQuery(this).next(".fin").next(".fincontent").css('display','none');
+                        
+                           });
+                        jQuery(this).next(".fincontent").slideToggle(400,function(){
+                        });      
+                        });   
+                        });
+                     </script>
+                     <script>
+                        jQuery(window).load(function() {
+                          jQuery('.flexslider').flexslider({
+                            animation: "fade"
+                          });
+                        });
+                     </script>
+                     <script>
+                        jQuery(document).ready(function(){
+                            jQuery('#signin_form').click(function(){
+                              //alert("hello");
+                              jQuery('#vss_solo_blank').css('display','block');
+                              
+                              });
+                           jQuery('#signin_form1').click(function(){
+                              jQuery('#vss_solo_blank').css('display','block');
+                              
+                              });
+                        });
+                        /*$( "#clickme" ).click(function() {
+                          $( "#book" ).toggle( "slow", function() {
+                            // Animation complete.
+                          });
+                        });*/
+                     </script>
+                     <!-- support desktop starts here --> 
+                     <div id="support_modal_desktop" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                           <div class="modal-image">
+                              <img src="catalog/view/theme/muathep.com/images/support_image.png" alt="Support Icon">
+                           </div>
+                           <div class="modal-content-right">
+                              <span class="support_desktop_close"></span>
+                              <div class="model_form">
+                                 <h3>SUPPORT</h3>
+                                 <ul class="signin_form">
+                                    <span id="support_login_error_box" style="display:none"></span>
+                                    <span id="support_login_success_box" style="display:none"></span>
+                                    <form name="support_form" id="support_form">
+                                       <li>
+                                          <input type="text" name="full_name" id="full_name" placeholder="Full Name" required='required' />
+                                       </li>
+                                       <li>
+                                          <input type="email" name="email" id="email" placeholder="Email ID"  required='required' />
+                                       </li>
+                                       <li>
+                                          <textarea placeholder="Query" id="query" name="query"  required='required'></textarea>
+                                       </li>
+                                       <li> <button type="button" class="btn-sumbmit" id="btnSaveIt">Submit</button>  </li>
+                                       <!--<input type="submit" value="SEND" />-->
+                                    </form>
+                                 </ul>
+                              </div>
+                              <div class="modal_footer">
+                                 <div class="modal_contact">
+                                    <i class="sprite sprite-tele"></i>
+                                    <div class="model_content_right">
+                                       <span>1800-833-2929</span>
+                                       <h6>Sun-Sat 10am-6pm</h6>
+                                    </div>
+                                 </div>
+                                 <div class="modal_support">
+                                    <i class="sprite sprite-support_icon"></i>
+                                    <div class="model_content_right">
+                                       <a href = "mailto: support&#64;steeloncall&#46;com">support&#64;steeloncall&#46;com</a>
+                                       <h6>online support</h6>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <script>       
+                        var btnSaveIt = document.getElementById('btnSaveIt');
+                           btnSaveIt.onclick =  function(){
+                              
+                              var full_name = jQuery("#full_name").val();
+                                       var email = jQuery("#email").val();
+                              var query = jQuery("#query").val();
+                              
+                              var error = 0;
+                              
+                              if (full_name.length === 0 && email.length === 0 &&  query.length === 0) {
+                                 error++;
+                                 jQuery("#support_login_error_box").hide();
+                                 jQuery("#support_login_error_box").html('Credentials Required!!');
+                                 jQuery("#full_name").css('box-shadow', '1px 1px 0 1px #FF0000');
+                                 jQuery("#email").css('box-shadow', '1px 1px 0 1px #FF0000');
+                                 jQuery("#query").css('box-shadow', '1px 1px 0 1px #FF0000');
+                        
+                              } else
+                              if (full_name.length >0 && email.length == 0 && query.length == 0) {
+                                 error++;
+                                 jQuery("#support_login_error_box").html('Email and Query Required!!');
+                                 jQuery("#email").css('box-shadow', '1px 1px 0 1px #FF0000');
+                                 jQuery("#query").css('box-shadow', '1px 1px 0 1px #FF0000');
+                                 jQuery("#full_name").css('box-shadow', 'none');
+                        
+                              }
+                              else if (full_name.length >0 && email.length > 0 && query.length == 0) {
+                                 error++;
+                                 jQuery("#support_login_error_box").html('Query Required!!');                  
+                                 jQuery("#query").css('box-shadow', '1px 1px 0 1px #FF0000');
+                                 
+                                 jQuery("#full_name").css('box-shadow', 'none');
+                                 jQuery("#email").css('box-shadow', 'none');
+                        
+                              }
+                              else if (full_name.length >0 && email.length == 0 && query.length > 0) {
+                                 error++;
+                                 jQuery("#support_login_error_box").html('Email Required!!');                  
+                                 jQuery("#email").css('box-shadow', '1px 1px 0 1px #FF0000');
+                                 
+                                 jQuery("#full_name").css('box-shadow', 'none');
+                                 jQuery("#query").css('box-shadow', 'none');
+                        
+                              }
+                              else if (full_name.length ==0 && email.length == 0 && query.length > 0) {
+                                 error++;
+                                 jQuery("#support_login_error_box").html('Name and Email Required!!');                  
+                                 jQuery("#email").css('box-shadow', '1px 1px 0 1px #FF0000');
+                                 
+                                 jQuery("#full_name").css('box-shadow', '1px 1px 0 1px #FF0000');
+                                 jQuery("#query").css('box-shadow', 'none');
+                        
+                              }
+                              else if (full_name.length ==0 && email.length > 0 && query.length > 0) {
+                                 error++;
+                                 jQuery("#support_login_error_box").html('Name  Required!!');
+                                 jQuery("#full_name").css('box-shadow', '1px 1px 0 1px #FF0000');
+                                 
+                                 jQuery("#email").css('box-shadow', 'none');
+                                 jQuery("#query").css('box-shadow', 'none');
+                        
+                              }
+                              else {
+                                 jQuery("#support_login_error_box").html('');                
+                                 
+                                 jQuery("#full_name").css('box-shadow', 'none');
+                                 jQuery("#email").css('box-shadow', 'none');
+                                 jQuery("#query").css('box-shadow', 'none');
+                        
+                              }
+                              
+                              if (error === 0){
+                                 var postData = jQuery('#support_form').serialize();               
+                                 jQuery.ajax({
+                                    type: 'post',
+                                    url: 'https://steeloncall.com/advertisementadmin/index/support/',
+                                    data: postData,
+                                    dataType: 'html',
+                                    success: function(data) {
+                                       jQuery("#support_login_success_box").show();
+                                       if(data==1){
+                                       jQuery("#support_login_success_box").html("Your Request has been submitted successfully"); 
+                                          jQuery("#full_name").val('');
+                                          jQuery("#email").val('');
+                                          jQuery("#query").val('');
+                                       }else{
+                                          
+                                       }
+                        
+                                    }
+                                 });            
+                              }else{
+                                 return false;
+                              }
+                           };
+                     </script>
+                     <!-- support desktop ends here -->
+                     <!-- support mobile starts here -->
+                     <div id="support_modal" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                           <div class="modal-image">
+                              <img src="catalog/view/theme/muathep.com/images/support_image.png" alt="Support Icon">
+                           </div>
+                           <div class="modal-content-right">
+                              <span class="close_modal4"></span>
+                              <div class="model_form">
+                                 <h3>SUPPORT</h3>
+                                 <ul class="signin_form">
+                                    <li>
+                                       <input type="text" placeholder="Full Name" />
+                                    </li>
+                                    <li>
+                                       <input type="email" placeholder="Email ID" />
+                                    </li>
+                                    <li>
+                                       <textarea placeholder="Query"></textarea>
+                                    </li>
+                                    <li><input type="submit" value="SEND" /></li>
+                                 </ul>
+                              </div>
+                              <div class="modal_footer">
+                                 <div class="modal_contact">
+                                    <i class="sprite sprite-tele"></i>
+                                    <div class="model_content_right">
+                                       <span>1800-833-2929</span>
+                                       <h6>Sun-Sat 10am-6pm</h6>
+                                    </div>
+                                 </div>
+                                 <div class="modal_support">
+                                    <i class="sprite sprite-support_icon"></i>
+                                    <div class="model_content_right">
+                                       <a href = "mailto: support&#64;steeloncall&#46;com">support&#64;steeloncall&#46;com</a>
+                                       <h6>online support</h6>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- support mobile ends here -->
+                     <div id="openModal" class="modalDialog">
+                        <div>
+                           <a href="#close" title="Close" class="video_close">X</a>
+                           <iframe  width="100%" height="100%"  id="video"  src="https://www.youtube.com/embed/oCjJ8Cw-e3w?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                     </div>
+                     <!-- track your order desktop starts here -->
+                     <div id="tracK_modal_desktop" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                           <div class="modal-image">
+                              <img src="catalog/view/theme/muathep.com/images/track_image.png" alt="Track Icon">
+                           </div>
+                           <div class="modal-content-right">
+                              <span class="close_modal6"></span>
+                              <div class="model_form">
+                                 <h3>ORDER INFORMATION</h3>
+                                 <ul class="signin_form">
+                                    <form action="https://steeloncall.com/calculate/index/getOrder/" method="post" name="track_order">
+                                       <li>
+                                          <h5>Order ID</h5>
+                                       </li>
+                                       <li>
+                                          <input type="text" placeholder="" name="order_id" id="order_id"  required="required"/>
+                                       </li>
+                                       <li><input type="submit" value="SUBMIT" /></li>
+                                    </form>
+                                 </ul>
+                              </div>
+                              <div class="modal_footer">
+                                 <div class="modal_contact">
+                                    <i class="sprite sprite-tele"></i>
+                                    <div class="model_content_right">
+                                       <span>1800-833-2929</span>
+                                       <h6>Sun-Sat 10am-6pm</h6>
+                                    </div>
+                                 </div>
+                                 <div class="modal_support">
+                                    <i class="sprite sprite-support_icon"></i>
+                                    <div class="model_content_right">
+                                       <a href = "mailto: support&#64;steeloncall&#46;com">support&#64;steeloncall&#46;com</a>
+                                       <h6>online support</h6>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- track your desktop ends here -->
+                     <!-- track your order starts here -->
+                     <div id="tracK_modal" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                           <div class="modal-image">
+                              <img src="catalog/view/theme/muathep.com/images/track_image.png" alt="Track Icon">
+                           </div>
+                           <div class="modal-content-right">
+                              <span class="close_modal5"></span>
+                              <div class="model_form">
+                                 <h3>ORDER INFORMATION </h3>
+                                 <form action="https://steeloncall.com/calculate/index/getOrder/" method="post" name="track_order">
+                                    <ul class="signin_form">
+                                       <li>
+                                          <h5>Order ID</h5>
+                                       </li>
+                                       <li>
+                                          <input type="number" placeholder="" name="order_id" id="order_id" required='required' autocomplete="off"  /> 
+                                       </li>
+                                       <li><input type="submit" value="SUBMIT" /></li>
+                                    </ul>
+                                 </form>
+                              </div>
+                              <div class="modal_footer">
+                                 <div class="modal_contact">
+                                    <i class="sprite sprite-tele"></i>
+                                    <div class="model_content_right">
+                                       <span>1800-833-2929</span>
+                                       <h6>Sun-Sat 10am-6pm</h6>
+                                    </div>
+                                 </div>
+                                 <div class="modal_support">
+                                    <i class="sprite sprite-support_icon"></i>
+                                    <div class="model_content_right">
+                                       <a href = "mailto: support&#64;steeloncall&#46;com">support&#64;steeloncall&#46;com</a>
+                                       <h6>online support</h6>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- track your order here -->
+                     <script>
+                        jQuery(document).ready(function(e) {
+                           jQuery('.video_close').click(function(e) {
+                              var stopVideo = function(player) {
+                              var vidSrc = player.prop('src');
+                              player.prop('src', ''); // to force it to pause
+                              player.prop('src', vidSrc);
+                             };     
+                             // at some appropriate time later in your code
+                             stopVideo(jQuery('#video'));
+                            });
+                           
+                           jQuery(".icon-round").click(function(e) {
+                                //jQuery("iframe#video").attr("src", jQuery("iframe#player").attr("src").replace("autoplay=0", "autoplay=1"));     
+                               var startVideo = function(player) {
+                                 var vidSrc = player.prop('src');
+                                 player.prop('src', '"autoplay=0", "autoplay=1"'); // to force it to pause
+                                 player.prop('src', vidSrc);
+                                };       
+                              startVideo(jQuery('#video'));  
+                            });
+                        });
+                     </script>
+                     <script>        
+                        // get the modal  
+                           var support_modal_desktop = document.getElementById('support_modal_desktop');
+                           /*var model04 = document.getElementById('support_modal');
+                           var model05 = document.getElementById('tracK_modal');*/
+                           var model06 = document.getElementById('tracK_modal_desktop');
+                        
+                        // get the button which opens the modal      
+                           var support_btn_desktop = document.getElementById('support_btn_desktop');
+                           /*var btn4 = document.getElementById('btn4');
+                           var btn5 = document.getElementById('btn5');*/
+                           
+                        // get the close button which closes the modal  
+                           var support_desktop_close = document.getElementsByClassName('support_desktop_close')[0];
+                        /* var close_btn04 = document.getElementsByClassName('close_modal4')[0];
+                           */
+                           var close_btn06 = document.getElementsByClassName('close_modal6')[0];
+                              
+                        // when user clicks the button open the model
+                           support_btn_desktop.onclick =  function(){
+                              support_modal_desktop.style.display = "block";
+                           }
+
+                           support_desktop_close.onclick = function(){
+                              support_modal_desktop.style.display = "none";
+                           }
+                           
+                           /*btn5.onclick =  function(){
+                              model05.style.display = "block";
+                           }
+                           
+                           expert_btn_desktop.onclick =  function(){
+                              expert_modal_desktop.style.display = "block";
+                           }  */
+                           
+                           /*support_modal_desktop.onclick = function(){
+                              alert("hello");
+                              support_modal_desktop.style.display = "none" ; 
+                              }*/
+                           /*close_btn04.onclick = function(){
+                              model04.style.display = "none"   ;
+                           }
+                           */ 
+                           close_btn06.onclick = function(){         
+                              model06.style.display = "none"   ;
+                           }      ;              
+                               
+                     </script>
+                     <div id="bodycon">
+                        <div class="container  home_max ">
+                           <div class="main-container col1-layout">
+                              <div class="" id="">
+                                 <div class="main">
+                                    <!-- <div class="breadcrumbs">
+                                       <ul>
+                                         <li class="home"> <a href="" title="Go to Home Page">Home</a> <span> &gt; </span> </li>
+                                         <li> <strong>Define</strong> </li>
+                                       </ul>
+                                       </div> -->
+                                    <div class="col-main ">
+                                       <div class="std">
+                                          <p>
+                                          <div class="contentBox construction-cat-home">
+                                             <h3><span>Sản Phẩm</span></h3>
+                                             <p>Muathep.vn  - Đơn vị phân phối cấp một của các nhà máy thép có quy mô hàng đầu tại Việt Nam cũng như khu vực</p>
+                                             <div class="category_section">
+                                                <ul>
+                                                   <li class="slide">
+                                                      <span class="gal"><code>
+                                                      <a href="construction-steel.html" title="Construction Steel">
+                                                      <img src="catalog/view/theme/muathep.com/media/catalog/category/mcc1_1.png" alt="Construction Steel" />
+                                                      <span>Click Here to View More <strong>Construction Steel..</strong></span>
+                                                      </a></code>
+                                                      </span>
+                                                      <h6><a href="construction-steel.html">Thép Xây Dựng</a></h6>
+                                                      <h5><span>
+                                                         <a href="tmt-bars.html">Thép Cuộn</a>
+                                                         <a href="construction-ms-rounds.html">Thép thanh tròn trơn</a>
+                                                         <a href="binding-wire.html">Thép thanh vằn</a>
+                                                         </span>
+                                                      </h5>
+                                                   </li>
+                                                   <li class="slide">
+                                                      <span class="gal"><code>
+                                                      <a href="fabrication-steel.html" title="Fabrication Steel">
+                                                      <img src="catalog/view/theme/muathep.com/media/catalog/category/mcc2_1_1.png" alt="Fabrication Steel" />
+                                                      <span>Click Here to View More <strong>Fabrication Steel..</strong></span>
+                                                      </a></code>
+                                                      </span>
+                                                      <h6><a href="#">Thép ống, hộp</a></h6>
+                                                      <h5><span>
+                                                         <a href="#">Thép ống</a>
+                                                         <a href="#">Thép hộp</a>
+                                                         </span>
+                                                      </h5>
+                                                   </li>
+                                                   <li class="slide">
+                                                      <span class="gal"><code>
+                                                      <a href="special-steel.html" title="Special Steel">
+                                                      <img src="catalog/view/theme/muathep.com/images/ximang.jpg" alt="Special Steel" />
+                                                      <span>Click Here to View More <strong>Phôi Thép</strong></span>
+                                                      </a></code>
+                                                      </span>
+                                                      <h6><a href="special-steel.html">Xi Măng</a></h6>
+                                                      <h5><span>
+                                                        
+                                                         <a href="ms-flats.html">Xi măng bao</a>
+                                                         <a href="ms-pipes.html">Xi măng rời</a>
+                                                         </span>
+                                                      </h5>
+                                                   </li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                          <!-- 14-10-2020 scripts -->
+                                          <!-- tabs scripts -->
+                                          </p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <script src="catalog/view/theme/muathep.com/js/jquery.bxslider.js"></script>
+                     <link rel="stylesheet" href="catalog/view/theme/muathep.com/css/jquery.bxslider.css">
+                     {{content_bottom}}
+
+                     <div class="our-brand">
+                        <div class="container">
+                           <div class="brandslist">
+                              <h2><a href="brands.html"><span>Đối Tác Của Chúng Tôi</span></a></h2>
+                              <p>Chúng tôi tự hào cung cấp các Sản phẩm Tốt nhất từ ​​các Thương hiệu Tốt nhất</p>
+                              <ul class="brand-ul responsive">
+                                 <a href='brands/vizag-steel.html'>
+                                    <li><img id='24' class='' src='catalog/view/theme/muathep.com/images/1.jpg' alt='Vizag Steel'></li>
+                                 </a>
+                                 <a href='brands/jsw-neo.html'>
+                                    <li><img id='61' class='' src='catalog/view/theme/muathep.com/images/2.png' alt='JSW NEO'></li>
+                                 </a>
+                                 <a href='brands/tata-tiscon.html'>
+                                    <li><img id='62' class='' src='catalog/view/theme/muathep.com/images/3.png' alt='TATA tiscon'></li>
+                                 </a>
+                                 <a href='brands/JaiRaj.html'>
+                                    <li><img id='199' class='' src='catalog/view/theme/muathep.com/images/4.png' alt='JaiRaj'></li>
+                                 </a>
+                              </ul>
+                              <!-- <a href="">MORE BRANDS ></a> -->
+                           </div>
+                           <!--  <div class="how-work">
+                              <h2>How It Works</h2>
+                              <div class="b-home">
+                              <p>We built SteelonCall with a vision to make building easy. Understanding your stress, we placed all your Steel needs in one place.  We not only made it budget friendly through Competitive Pricing but also safely deliver whenever you want, wherever you want.</p>
+                              
+                              
+                              </div>
+                              <a href="">READ MORE ></a>
+                              </div> -->
+                        </div>
+                     </div>
+                     <div class="f-social">
+                        <div class="container">
+                           <h2><span>Khách Hàng Nói Về Chúng Tôi</span></h2>
+                           <p>Chúng tôi hạnh phúc khi khách hàng hạnh phúc</p>
+                        </div>
+                        <div class="testimonial_slider">
+                           <div class="container">
+                              <div class="flexslider">
+                                 <ul class="slides">
+                                    <li>
+                                       Thật tuyệt vời . Họ đã cho tôi tất cả các tùy chọn liên quan đến tính khả dụng của thương hiệu với chứng chỉ chất lượng. Họ cung cấp dịch vụ tốt nhất với giá tốt nhất. Họ đã giao chuyến hàng đúng hẹn. Mong cho các giao dịch tiếp theo.<!-- <span><a href="">Read more...</a></span> -->
+                                       <div class="testi_img"><img src="catalog/view/theme/muathep.com/media/magebuzz/avatar/environment_1.png" alt="Ravi" class="test_pic">
+                                          <span>Mrs. Nam</span>
+                                       </div>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <script>
+                        jQuery(window).load(function() {
+                          jQuery('.flexslider').flexslider({
+                            animation: "slide"
+                          });
+                        });
+                     </script>
+                     <script type="text/javascript" src="catalog/view/theme/muathep.com/js/jquery-1.11.0.min.js"></script>
+                     <script type="text/javascript" src="catalog/view/theme/muathep.com/js/jquery-migrate-1.2.1.min.js"></script>
+                     <script type="text/javascript" src="catalog/view/theme/muathep.com/js/lib/jquery/noconflict.js"></script>
+                     <script src="catalog/view/theme/muathep.com/js/slick.min.js"></script>
+                     <script>
+                        jQuery('.responsive').slick({
+                          dots: true,
+                          
+                          speed: 300,
+                          slidesToShow: 5,
+                          slidesToScroll: 5,
+                          autoplay: true,
+                          autoplaySpeed: 5000,
+                          responsive: [
+                            {
+                              breakpoint: 1024,
+                              settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3,
+                                infinite: true,
+                                dots: true
+                              }
+                            },
+                            {
+                              breakpoint: 600,
+                              settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                              }
+                            },
+                            {
+                              breakpoint: 480,
+                              settings: {
+                                slidesToShow:2,
+                                slidesToScroll: 1
+                              }
+                            }
+                            // You can unslick at a given breakpoint now by adding:
+                            // settings: "unslick"
+                            // instead of a settings object
+                          ]
+                        });
+                        
+                     </script>
+                     <script>
+                        jQuery('p').each(function() {
+                            var $this = jQuery(this);
+                            if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
+                                $this.remove();
+                        });
+                     </script>   
+                     <div class="blog-sec">
+                        <div class="container">
+                           <h2><span>Tin tức ngành thép</span></h2>
+                           <p>Chúng tôi luôn luôn cập nhật tin tức ngành thép một cách nhanh chóng</p>
+                           <ul>
+                              <div id="owl-example" class="owl-carousel">
+                                 <li>
+                                    <a href="#"><img src="https://www.satthep.net/uploads/news/08/86/65/htb1ifvgfi0tmkjjszfnq6y1fxaj-155477961311883188128.jpg" alt=" What Is Case Hardening of Steel?"/></a>
+                                    <div class="blog_inner_c">
+                                       <div class="bl_cont">
+                                          <h4><a href="what-is-case-hardening-of-steel.html">  Giá thép xây dựng hôm nay 18/5: Ổn định trong nước, tăng nhẹ trên sàn giao dịch</a></h4>
+                                          <p> Giá thép xây dựng trong nước hôm nay tiếp tục giữ nguyên. Còn trên sàn giao dịch Thượng Hải, giá thép đã tăng nhẹ lên mức 5.650 Nhân dân tệ/tấn. Giá thép tại miền Bắc Giá thép hôm nay 18/5, thương hiệu thép Hòa Phát đã cho thấy không thay đổi giá bán các sản phẩm. Với thép cuộn CB240 ...</p>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <a href="#"><img src="https://www.satthep.net/uploads/news/08/86/65/htb1ifvgfi0tmkjjszfnq6y1fxaj-155477961311883188128.jpg" alt=" What Is Case Hardening of Steel?"/></a>
+                                    <div class="blog_inner_c">
+                                       <div class="bl_cont">
+                                          <h4><a href="what-is-case-hardening-of-steel.html">  Giá thép xây dựng hôm nay 18/5: Ổn định trong nước, tăng nhẹ trên sàn giao dịch</a></h4>
+                                          <p> Giá thép xây dựng trong nước hôm nay tiếp tục giữ nguyên. Còn trên sàn giao dịch Thượng Hải, giá thép đã tăng nhẹ lên mức 5.650 Nhân dân tệ/tấn. Giá thép tại miền Bắc Giá thép hôm nay 18/5, thương hiệu thép Hòa Phát đã cho thấy không thay đổi giá bán các sản phẩm. Với thép cuộn CB240 ...</p>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <a href="#"><img src="https://www.satthep.net/uploads/news/08/86/65/htb1ifvgfi0tmkjjszfnq6y1fxaj-155477961311883188128.jpg" alt=" What Is Case Hardening of Steel?"/></a>
+                                    <div class="blog_inner_c">
+                                       <div class="bl_cont">
+                                          <h4><a href="what-is-case-hardening-of-steel.html">  Giá thép xây dựng hôm nay 18/5: Ổn định trong nước, tăng nhẹ trên sàn giao dịch</a></h4>
+                                          <p> Giá thép xây dựng trong nước hôm nay tiếp tục giữ nguyên. Còn trên sàn giao dịch Thượng Hải, giá thép đã tăng nhẹ lên mức 5.650 Nhân dân tệ/tấn. Giá thép tại miền Bắc Giá thép hôm nay 18/5, thương hiệu thép Hòa Phát đã cho thấy không thay đổi giá bán các sản phẩm. Với thép cuộn CB240 ...</p>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <a href="#"><img src="https://www.satthep.net/uploads/news/08/86/65/htb1ifvgfi0tmkjjszfnq6y1fxaj-155477961311883188128.jpg" alt=" What Is Case Hardening of Steel?"/></a>
+                                    <div class="blog_inner_c">
+                                       <div class="bl_cont">
+                                          <h4><a href="what-is-case-hardening-of-steel.html">  Giá thép xây dựng hôm nay 18/5: Ổn định trong nước, tăng nhẹ trên sàn giao dịch</a></h4>
+                                          <p> Giá thép xây dựng trong nước hôm nay tiếp tục giữ nguyên. Còn trên sàn giao dịch Thượng Hải, giá thép đã tăng nhẹ lên mức 5.650 Nhân dân tệ/tấn. Giá thép tại miền Bắc Giá thép hôm nay 18/5, thương hiệu thép Hòa Phát đã cho thấy không thay đổi giá bán các sản phẩm. Với thép cuộn CB240 ...</p>
+                                       </div>
+                                    </div>
+                                 </li>
+                              </div>
+                           </ul>
+                        </div>
+                     </div>
+                     <script src="catalog/view/theme/muathep.com/js/jquery.flexslider.js"></script>
+                     <link rel="stylesheet" type="text/css" href="catalog/view/theme/muathep.com/css/owl.carousel.css">
+                     <script src="catalog/view/theme/muathep.com/js/owl.carousel.js"></script>
+                     <script>
+                        jQuery(document).ready(function() {
+                           jQuery("#owl-example").owlCarousel({
+                              responsive: true,
+                              items:4
+
+                           });    
+                        });
+                     </script>
+                     <div id="singupNewsletter">
+                        <div class="container">  </div>
+                     </div>
+                     <section id="signupnewsletter">
+                        <div class="container">
+                           <div class="signupnewsletter">
+                              <div class="signupnewletter-header">
+                                 <h3>Subscribe for Newsletter</h3>
+                                 <p>Learn about the latest trends in steel marketplace. We keep you informed about everything you should know.</p>
+                              </div>
+                              <div class="signupnewletter-form">
+                                 <!-- <input type="email" placeholder="Email">
+                                    <button type="button">Subscribe</button>-->
+                                 <div class="block block-subscribe">
+                                    <form action="javascript:void(0)" method="post" id="newsletter-validate-detail" onsubmit="myfunc();">
+                                       <div class="block-content">
+                                          <div class="input-box">
+                                             <input type="text" name="email" id="newsletter" placeholder="Email Address" title="Sign up for our newsletter" class="input-text required-entry validate-email" autocomplete="off" />
+                                             <div class="error-news-msg" id="error-news-msg" style="display:none;">Please Enter a valid email address.</div>
+                                             <div class="output" id="output"></div>
+                                          </div>
+                                          <div class="actions">
+                                             <button type="submit" title="Subscribe" class="button">Subscribe</button>  
+                                             <!--<input type="submit" value=" " class="submit">-->
+                                          </div>
+                                       </div>
+                                    </form>
+                                    <script type="text/javascript">
+                                       function myfunc()
+                                       {  
+                                          var newsletterSubscriberFormDetail = new VarienForm('newsletter-form');
+                                          var form_email = $('newsletter').getValue();
+                                          var params_form = $('newsletter-validate-detail');       
+                                          new Validation('newsletter');                        
+                                          if(echeck(form_email))                            
+                                          {  
+                                             new Ajax.Request( "index.html", {
+                                             method: "post",
+                                             parameters: {
+                                                email : form_email
+                                             },
+                                             onSuccess: function( transport ) {              
+                                                Element.hide('error-news-msg');           
+                                                var da = transport.responseText;
+                                                var dat = da.split("&&");              
+                                                $('output').innerHTML = dat[0];
+                                                if(dat[1]==1){
+                                                   Element.show('output'); 
+                                                    $('output').setAttribute("class", "success-msg");
+                                                   Element.hide.delay(10, 'output');
+                                                } else { 
+                                                    Element.show('output'); 
+                                                   $('output').setAttribute("class", "error-msg"); 
+                                                   Element.hide.delay(10, 'output');
+                                                }
+                                             }
+                                          });            
+                                             
+                                          } else {  return true;}
+                                       }
+                                       
+                                         function echeck(str) {
+                                             var at="@"
+                                             var dot="."
+                                             var lat=str.indexOf(at)
+                                             var lstr=str.length
+                                             var ldot=str.indexOf(dot)
+                                             if (str.indexOf(at)==-1){
+                                               goProcedural();
+                                                return false;
+                                             }
+                                       
+                                             if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){
+                                              goProcedural();
+                                                return false;
+                                             }
+                                       
+                                             if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
+                                                 goProcedural();
+                                                 return false;
+                                             }
+                                       
+                                              if (str.indexOf(at,(lat+1))!=-1){
+                                                goProcedural();
+                                                 return false;
+                                              }
+                                       
+                                              if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
+                                                 goProcedural();
+                                                 return false;
+                                              }
+                                       
+                                              if (str.indexOf(dot,(lat+2))==-1){
+                                                goProcedural();
+                                                 return false;
+                                              }
+                                             
+                                              if (str.indexOf(" ")!=-1){
+                                                 goProcedural();
+                                                 return false;
+                                              }
+                                               return true;                    
+                                         }
+                                         function goProcedural()
+                                       {
+                                        Element.hide('output');
+                                        $('error-news-msg').setAttribute("class", "validation-advice");
+                                           Element.show('error-news-msg');   
+                                           Element.hide.delay(10, 'error-news-msg');
+                                       }
+                                                                 
+                                    </script>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </section>
+{{footer}}
